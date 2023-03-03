@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CatogeryController;
 use App\Http\Controllers\EnquiryController;
@@ -104,6 +105,9 @@ Route::middleware('auth')->group(function () {
         Route::post('/setting.destroy', 'destroy')->name('setting.destroy')->middleware(['admin','auth']);
     });
 
+    Route::controller(user_Property_Controller::class)->group(function(){
+        Route::post('/userProperty.store','store')->name('userProperty.store')->middleware(['admin','auth']);
+    });
     Route::controller(ReportController::class)->group(function () {
         Route::get('/report', 'index')->name('report')->middleware(['admin','auth']);
         Route::post('/report.store', 'store')->name('report.store')->middleware(['admin','auth']);
@@ -122,6 +126,9 @@ Route::middleware('auth')->group(function () {
         Route::post('/user.edit', 'edit')->name('user.edit')->middleware(['admin','auth']);;
         Route::post('/user.update', 'update')->name('user.update')->middleware(['admin','auth']);
         Route::post('/user.destroy', 'destroy')->name('user.destroy')->middleware(['admin','auth']);
+    });
+    Route::controller(AdvisorController::class)->group(function(){
+        Route::get('/advisors','index')->name('advisors')->middleware(['admin','auth']);
     });
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

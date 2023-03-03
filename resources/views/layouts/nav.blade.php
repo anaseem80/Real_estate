@@ -18,6 +18,12 @@
           <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='terms') }}">الشروط والأحكام</a>
           </li>
+        @if(Auth::user()->user_type == 'user')
+            <li class="nav-item me-2">
+              <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='advisors') }}">المستشار العقاري الإلكتروني</a>
+            </li>
+        @endif
+          
           {{-- <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='aboutpage') }}">معلومات عنا</a>
           </li> --}}
@@ -29,9 +35,13 @@
             <div class="dropdown">
               <img src="/assets/img/backgrounds/icons8-user-48.png" width="40" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" />                          
               <ul class="dropdown-menu border-top border-0 text-end" aria-labelledby="dropdownMenuButton1" dir="ltr">
-                <li class="dropdown-item" dir="rtl">مرحبا {{Getusername()}}!</li>
+                <li class="dropdown-item" dir="rtl">مرحبا {{Auth::user()->name}}!</li>
                 <li class="dropdown-item"><hr class="mb-1 mt-0"></li>                          
                 <li><a class="dropdown-item"  href="{{ url('/' . $page='profile') }}">الإعدادات <i class="fa fa-gear"></i></a></li>
+                @if(Auth::user()->user_type == 'admin')
+                  <li><a class="dropdown-item"  href="{{ url('/' . $page='dashboard') }}">لوحة التحكم <i class="fa fa-gear"></i></a></li>
+                @endif
+                
                 <li><a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
                   class="bx bx-log-out"></i>تسجيل خروج</a>

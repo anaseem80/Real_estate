@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
 [
     'name' => 'محمد محمود',
     'country' => 'Egypt',
-    'user_type' => 'user',
+    'user_type' => 'admin',
     'phone' => '123456789',
     
     'email' => 'user1@example.com',
