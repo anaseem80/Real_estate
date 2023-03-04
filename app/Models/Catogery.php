@@ -18,4 +18,8 @@ class Catogery extends Model
     {
         return $this->hasMany(Property::class,'catogerie_id');
     }
+    public function paint()
+    {
+        return $this->hasMany(Paint::class,'catogerie_id');
+    }
 }

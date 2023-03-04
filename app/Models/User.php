@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+
 use App\Notifications\ResetPasswordNotification;
 
 
@@ -56,6 +57,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function blog()
     {
         return $this->hasMany(Blog::class,'user_id');
+    }
+    public function paint()
+    {
+        return $this->hasMany(Paint::class,'user_id');
     }
     // public function sendPasswordResetNotification($token)
     // {
