@@ -18,12 +18,13 @@
           <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='terms') }}">الشروط والأحكام</a>
           </li>
-        @if(Auth::user()->user_type == 'user')
+        
             <li class="nav-item me-2">
               <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='advisors') }}">المستشار العقاري الإلكتروني</a>
             </li>
-        @endif
-          
+            <li class="nav-item me-2">
+              <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='paints') }}">خدمة التشطيب</a>
+            </li>
           {{-- <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='aboutpage') }}">معلومات عنا</a>
           </li> --}}

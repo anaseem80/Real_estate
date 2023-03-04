@@ -355,8 +355,8 @@ class ComposerStaticInitd402fbddc8e12111d2e0696e8f9c2e9d
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -548,6 +548,7 @@ class ComposerStaticInitd402fbddc8e12111d2e0696e8f9c2e9d
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AddresseController' => __DIR__ . '/../..' . '/app/Http/Controllers/AddresseController.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+        'App\\Http\\Controllers\\AdvisorController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdvisorController.php',
         'App\\Http\\Controllers\\Api\\AuthaaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/AuthaaController.php',
         'App\\Http\\Controllers\\Api\\EmailVerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/EmailVerificationController.php',
         'App\\Http\\Controllers\\Api\\PropertyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/PropertyController.php',
@@ -591,6 +592,7 @@ class ComposerStaticInitd402fbddc8e12111d2e0696e8f9c2e9d
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
+        'App\\Http\\Requests\\property\\storeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/property/storeRequest.php',
         'App\\Mail\\Testmail' => __DIR__ . '/../..' . '/app/Mail/Testmail.php',
         'App\\Models\\Addresse' => __DIR__ . '/../..' . '/app/Models/Addresse.php',
         'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',

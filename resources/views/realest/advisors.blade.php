@@ -112,3 +112,22 @@
         <script src="{{ asset('assets/s/libraries/swiper-bundle.min.js') }}"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

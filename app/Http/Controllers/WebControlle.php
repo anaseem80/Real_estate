@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Catogery;
 use App\Models\Enquiry;
 use App\Models\Property;
+use App\Models\PropertyDetalis;
 use App\Models\Report;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -24,6 +25,9 @@ class WebControlle extends Controller
         $propertiesviews = Property::orderBy('views', 'desc')->take(10)->get();
         $newProperties = Property::orderBy('created_at', 'desc')->where('status', 1)->limit(10)->get();
         $propertiesRec = Property::where('recommended', 1)->get();
+        $newforsale = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'للبيع')->limit(10)->get();
+        $newForRent = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'سنوي')->orWhere('Rental_term', 'شهري')->orWhere('Rental_term', 'يومي')->limit(10)->get();
+
         $catogerys = Catogery::all();
         return view(
             'realest.test',
@@ -32,12 +36,14 @@ class WebControlle extends Controller
                 'propertiesviews' => $propertiesviews,
                 'newProperties' => $newProperties,
                 'propertiesRec' => $propertiesRec->where('status', 1),
-                'catogerys' =>  $catogerys
-
+                'catogerys' =>  $catogerys,
+                'newforsale' => $newforsale,
+                'newForRent' => $newForRent
             ]
         );
     }
 
+    
 
 
     public function detalisscreen($id)
