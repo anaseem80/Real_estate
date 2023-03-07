@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class WebControlle extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Query to retrieve the most countries where properties are established
         $mostCountries = DB::table('properties')
@@ -27,7 +27,7 @@ class WebControlle extends Controller
         $propertiesRec = Property::where('recommended', 1)->get();
         $newforsale = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'للبيع')->limit(10)->get();
         $newForRent = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'سنوي')->orWhere('Rental_term', 'شهري')->orWhere('Rental_term', 'يومي')->limit(10)->get();
-
+        
         $catogerys = Catogery::all();
         return view(
             'realest.test',

@@ -49,12 +49,9 @@
                                 <tr>
                                     <th class="border-bottom-0">#</th>
                                     <th class="border-bottom-0">اسم المستخدم</th>
-                                    <th class="border-bottom-0">رقم الهاتف</th>
                                     <th class="border-bottom-0">نوع العقار</th>
                                     <th class="border-bottom-0">مساحة العقار</th>
-                                    <th class="border-bottom-0"> </th>
-
-
+                                    <th class="border-bottom-0">رقم الهاتف</th>
                                     <th class="border-bottom-0"> العمليات</th>
 
                                 </tr>

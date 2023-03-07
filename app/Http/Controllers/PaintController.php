@@ -69,7 +69,7 @@ class PaintController extends Controller
                 'phone' => $request->phone
             ]);
         }
-        session()->flash('Add', 'تم اضافة خدمة التشطيب بنجاح ');
+        session()->flash('Add', 'تم إرسال طلب التشطيب بنجاح');
         // $dataCatogery = Catogery::all();
         // return redirect('realest.property_insert_view',['catogery' => $dataCatogery]);
         return back();

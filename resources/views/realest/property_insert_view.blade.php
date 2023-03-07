@@ -399,17 +399,6 @@
         });
     </script>
 
-
-
-
-
-
-
-
-
-
-
-
     <script>
         $("#pac-input").focusin(function() {
             $(this).val('');
