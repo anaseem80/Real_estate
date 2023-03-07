@@ -30,7 +30,7 @@
                         </li>
                         <li class="mb-3">
                             <a class="text-decoration-none text-light" 
-                                href="{{ url('/' . ($page = 'advisors')) }}">المستشار العقاري الإلكتروني</a>
+                                href="{{ url('/' . ($page = 'advisors')) }}">إستشارة عقارية</a>
                         </li>
                     </ul>
                 </div>
