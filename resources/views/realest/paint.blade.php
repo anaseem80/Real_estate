@@ -16,9 +16,14 @@
     </style>
     <title>خدمة التشطيب</title>
 </head>
-
 <body>
-    @section('content')
+
+   
+
+        @include('layouts.headone')
+
+        @include('layouts.nav')
+        @section('content')
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -67,10 +72,6 @@
                 </button>
             </div>
         @endif
-
-        @include('layouts.headone')
-        @include('layouts.nav')
-
         <div class="page-content p-lg-5 p-sm-1">
             <div class="container">
 
@@ -130,7 +131,7 @@
                             </div>
                         @endif
                         <button type="submit" class="btn btn-danger"
-                        style="width:200px; height:50px; background-color: blue; color:white; margin: 0 auto;">حفظ التشطيب</button>
+                        style="width:200px; height:50px; background-color: blue; color:white; margin: 0 auto;">إرسال</button>
                     </form>
                 </div>
 

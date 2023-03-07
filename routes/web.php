@@ -9,6 +9,7 @@ use App\Http\Controllers\PaintController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\testControler;
 use App\Http\Controllers\UserController;
@@ -135,7 +136,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(AdvisorController::class)->group(function(){
         Route::get('/advisors','index')->name('advisors')->middleware(['auth']);
     });
-    
+    Route::get('search',[SearchController::class,'search'])->name('search');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

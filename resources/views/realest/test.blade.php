@@ -42,7 +42,9 @@
 </head>
 
 <body>
+
     @include('layouts.nav')
+
 
 
 
@@ -84,12 +86,14 @@
                                 <div class="px-4">
                                     <p class="text-danger fw-bold">حصري</p>
                                     <a href="detelisscreen/{{ $item->id }}" class="text-decoration-none">
-                                        <h5 class="card-title mt-3 fw-bold gray-color">{{ $item->name }}</h5>
+                                        <h5 class="card-title mt-3 fw-bold gray-color">
+                                            {{ $item->name }}</h5>
                                     </a>
-                                    <p class="mt-3 fw-light d-flex align-items-center gray-color"><img
-                                            src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
+                                    <p class="mt-3 fw-light d-flex align-items-center gray-color">
+                                        <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
                                             class="location ms-2" width="15" height="15"
-                                            alt="">{{ $item->country }}</p>
+                                            alt="">{{ $item->country }}
+                                    </p>
                                 </div>
                                 <hr class="m-0 mb-1">
                                 <div class="publisher d-flex align-items-center justify-content-between p-4">
@@ -147,12 +151,15 @@
                                 <div class="px-4">
                                     <p class="text-danger fw-bold">حصري</p>
                                     <a href="detelisscreen/{{ $item->id }}" class="text-decoration-none">
-                                        <h5 class="card-title mt-3 fw-bold gray-color">{{ $item->name }}</h5>
+                                        <h5 class="card-title mt-3 fw-bold gray-color">
+                                            {{ $item->name }}
+                                        </h5>
                                     </a>
-                                    <p class="mt-3 fw-light d-flex align-items-center gray-color"><img
-                                            src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
+                                    <p class="mt-3 fw-light d-flex align-items-center gray-color">
+                                        <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
                                             class="location ms-2" width="15" height="15"
-                                            alt="">{{ $item->country }}</p>
+                                            alt="">{{ $item->country }}
+                                    </p>
                                     <!-- <ul class="p-0 d-flex justify-content-between">
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
@@ -198,8 +205,8 @@
                             <div class="position-relative p-1">
                                 <div class="owl-carousel-img owl-theme" dir="ltr">
                                     <div class="item position-relative">
-                                        <img src="{{ $item->property->picture }}" class="card-img-top" height="270"
-                                            alt="...">
+                                        <img src="{{ $item->property->picture }}" class="card-img-top"
+                                            height="270" alt="...">
                                         <p
                                             class="status position-absolute text-light bg-danger text-white px-3 py-1 rounded fw-bold">
                                             <span class="english-font">اعلي تقييم
@@ -213,12 +220,15 @@
                                 <div class="px-4">
                                     <p class="text-danger fw-bold">حصري</p>
                                     <a href="detelisscreen/{{ $item->property->id }}" class="text-decoration-none">
-                                        <h5 class="card-title mt-3 fw-bold gray-color">{{ $item->property->name }}</h5>
+                                        <h5 class="card-title mt-3 fw-bold gray-color">
+                                            {{ $item->property->name }}
+                                        </h5>
                                     </a>
-                                    <p class="mt-3 fw-light d-flex align-items-center gray-color"><img
-                                            src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
+                                    <p class="mt-3 fw-light d-flex align-items-center gray-color">
+                                        <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
                                             class="location ms-2" width="15" height="15"
-                                            alt="">{{ $item->property->country }}</p>
+                                            alt="">{{ $item->property->country }}
+                                    </p>
                                     <!-- <ul class="p-0 d-flex justify-content-between">
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
@@ -264,8 +274,8 @@
                             <div class="position-relative p-1">
                                 <div class="owl-carousel-img owl-theme" dir="ltr">
                                     <div class="item position-relative">
-                                        <img src="{{ $item->property->picture }}" class="card-img-top" height="270"
-                                            alt="...">
+                                        <img src="{{ $item->property->picture }}" class="card-img-top"
+                                            height="270" alt="...">
                                         <p
                                             class="status position-absolute text-light bg-danger text-white px-3 py-1 rounded fw-bold">
                                             <span class="english-font">اعلي تقييم
@@ -279,12 +289,15 @@
                                 <div class="px-4">
                                     <p class="text-danger fw-bold">حصري</p>
                                     <a href="detelisscreen/{{ $item->property->id }}" class="text-decoration-none">
-                                        <h5 class="card-title mt-3 fw-bold gray-color">{{ $item->property->name }}</h5>
+                                        <h5 class="card-title mt-3 fw-bold gray-color">
+                                            {{ $item->property->name }}
+                                        </h5>
                                     </a>
-                                    <p class="mt-3 fw-light d-flex align-items-center gray-color"><img
-                                            src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
+                                    <p class="mt-3 fw-light d-flex align-items-center gray-color">
+                                        <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
                                             class="location ms-2" width="15" height="15"
-                                            alt="">{{ $item->property->country }}</p>
+                                            alt="">{{ $item->property->country }}
+                                    </p>
                                     <!-- <ul class="p-0 d-flex justify-content-between">
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
@@ -390,12 +403,15 @@
                                 <div class="px-4">
                                     <p class="text-danger fw-bold">حصري</p>
                                     <a href="detelisscreen/{{ $item->id }}" class="text-decoration-none">
-                                        <h5 class="card-title mt-3 fw-bold gray-color">{{ $item->name }}</h5>
+                                        <h5 class="card-title mt-3 fw-bold gray-color">
+                                            {{ $item->name }}
+                                        </h5>
                                     </a>
-                                    <p class="mt-3 fw-light d-flex align-items-center gray-color"><img
-                                            src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
+                                    <p class="mt-3 fw-light d-flex align-items-center gray-color">
+                                        <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg"
                                             class="location ms-2" width="15" height="15"
-                                            alt="">{{ $item->country }}</p>
+                                            alt="">{{ $item->country }}
+                                    </p>
                                     <!-- <ul class="p-0 d-flex justify-content-between">
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
@@ -487,7 +503,9 @@
                                 <div class="details text-light">
                                     <h4>{{ $mostCountries[0]->country }}</h4>
                                     <p class="text-light"><span
-                                            class="english-font">{{ $mostCountries[0]->count }}</span> عقار</p>
+                                            class="english-font">{{ $mostCountries[0]->count }}</span>
+                                        عقار
+                                    </p>
                                 </div>
                             </div>
                         </a>
@@ -504,7 +522,8 @@
                                 <div class="details text-light">
                                     <h4>{{ $mostCountries[1]->country }}</h4>
                                     <p class="text-light"><span
-                                            class="english-font text-light">{{ $mostCountries[1]->count }}</span> عقار
+                                            class="english-font text-light">{{ $mostCountries[1]->count }}</span>
+                                        عقار
                                     </p>
                                 </div>
                             </div>
@@ -521,7 +540,8 @@
                                 <div class="details text-light">
                                     <h4>{{ $mostCountries[2]->country }}</h4>
                                     <p class="text-light"><span
-                                            class="english-font text-light">{{ $mostCountries[2]->count }}</span> عقار
+                                            class="english-font text-light">{{ $mostCountries[2]->count }}</span>
+                                        عقار
                                     </p>
                                 </div>
                             </div>
@@ -538,7 +558,8 @@
                                 <div class="details text-light">
                                     <h4>{{ $mostCountries[3]->country }}</h4>
                                     <p class="text-light"><span
-                                            class="english-font text-light">{{ $mostCountries[3]->count }}</span> عقار
+                                            class="english-font text-light">{{ $mostCountries[3]->count }}</span>
+                                        عقار
                                     </p>
                                 </div>
                             </div>
