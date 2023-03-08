@@ -135,6 +135,8 @@ Route::middleware('auth')->group(function () {
     });
     Route::controller(AdvisorController::class)->group(function(){
         Route::get('/advisors','index')->name('advisors')->middleware(['auth']);
+        Route::get('advisors.search','search')->name('advisors.search');
+        //Route::get('PurposeOfPurchase','PurposeOfPurchase')->name('PurposeOfPurchase')->middleware(['auth']);
     });
     Route::get('search',[SearchController::class,'search'])->name('search');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
