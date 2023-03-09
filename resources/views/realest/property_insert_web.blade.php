@@ -162,7 +162,18 @@
                             <option value="10">10</option>
                         </select>
                     </div>
-
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <label for="rent type">طريقة الدفع</label>
+                        <select class="form-control rounded-0 p-3" id="rent type" name="payment_method">
+                            <option title="Volvo is a car" ></option>
+                            <option value="قسط">قسط</option>
+                            <option value="كاش">كاش</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="rent type">البادجت/الميزانية</label>
+                        <input type="text" name="pay" class="form-control ms-2 rounded-0 p-3" placeholder="البادجت/المزانية"
+                    </div>
                     <div class="mb-4">
                         <p class="mg-b-10">مميزات العقار</p>
                         <select name="future[]" multiple="multiple" class="form-control select2">

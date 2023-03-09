@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('picture');
             $table->string('country');
+            $table->string('payment_method');
+            $table->string('pay');
             $table->integer('status')->default(0);
             $table->integer('views')->default(0);
             $table->integer('recommended')->default(0);

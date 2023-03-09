@@ -99,10 +99,10 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(CatogeryController::class)->group(function () {
        // Route::get('/catogery', 'index')->name('catogery');
-        Route::get('/catogeryview', 'index')->name('catogeryview')->middleware(['admin','auth']);
-        Route::post('/catogerystore', 'store')->name('catogery.store')->middleware(['admin','auth']);
-        Route::post('/catogeryupdate', 'update')->name('catogery.update')->middleware(['admin','auth']);
-        Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy')->middleware(['admin','auth']);
+        Route::get('/catogeryview', 'index')->name('catogeryview')->middleware(['auth']);
+        Route::post('/catogerystore', 'store')->name('catogery.store')->middleware(['auth']);
+        Route::post('/catogeryupdate', 'update')->name('catogery.update')->middleware(['auth']);
+        Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy')->middleware(['auth']);
     });
 
 
