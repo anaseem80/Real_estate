@@ -172,11 +172,11 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="rent type">البادجت/الميزانية</label>
-                        <input type="text" name="pay" class="form-control ms-2 rounded-0 p-3" placeholder="البادجت/المزانية"
+                        <input type="text" name="pay" class="form-control ms-2 rounded-0 p-3" placeholder="البادجت/المزانية">
                     </div>
                     <div class="mb-4">
                         <p class="mg-b-10">مميزات العقار</p>
-                        <select name="future[]" multiple="multiple" class="form-control select2">
+                        <select name="future[]" multiple="multiple" class="form-control features-3kar">
                             <option selected value="سطح خاص">سطح خاص</option>
                             <option value="مدخل سيارة">مدخل سيارة</option>
                             <option value="مكيفات">مكيفات</option>
@@ -273,7 +273,20 @@
         <!-- Internal TelephoneInput js-->
         <script src="{{ URL::asset('assets/plugins/telephoneinput/telephoneinput.js') }}"></script>
         <script src="{{ URL::asset('assets/plugins/telephoneinput/inttelephoneinput.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
+        // Initialize the Select2 dropdown
+        $(document).ready(function() {
+            $('.select2a').select2({
+                theme: 'bootstrap5', // Use Bootstrap 4 styling
+                width: '100%', // Set the width of the dropdown
+                placeholder: 'اختر المميزات...', // Set a placeholder text
+                allowClear: true, // Allow clearing the selection
+                dir: 'rtl' // Set the direction of the dropdown to right-to-left
+            });
+        });
+        </script>
+        <!-- <script>
             $(function() {
                 // Multiple images preview in browser
 
@@ -306,18 +319,6 @@
 
             });
         </script>
-
-
-
-
-
-
-
-
-
-
-
-
         <script>
             $("#pac-input").focusin(function() {
                 $(this).val('');
@@ -519,22 +520,10 @@
                 $("#latitude").val(lat);
                 $("#longitude").val(Lng);
             }
-        </script>
+        </script> -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANd3nsdL7bmOR-8UkZDrTNtjaX63JbjZs&libraries=places&callback=initAutocomplete&language=ar&region=EG
                              async defer"></script>
     @endsection
-    <script>
-        // Initialize the Select2 dropdown
-        $(document).ready(function() {
-            $('.select2').select2({
-                theme: 'bootstrap4', // Use Bootstrap 4 styling
-                width: '100%', // Set the width of the dropdown
-                placeholder: 'اختر المميزات...', // Set a placeholder text
-                allowClear: true, // Allow clearing the selection
-                dir: 'rtl' // Set the direction of the dropdown to right-to-left
-            });
-        });
-    </script>
 
     <script>
         $("#pac-input").focusin(function() {

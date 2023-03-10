@@ -20,16 +20,20 @@
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'blogview')) }}">مدونه</a>
                 </li>
-                <li class="nav-item me-2">
+                <!-- <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'terms')) }}">الشروط والأحكام</a>
-                </li>
+                </li> -->
 
-                {{-- <li class="nav-item me-2">
+                <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'advisors')) }}">إستشارة عقارية</a>
-                </li>    --}}
+                </li>
                 <li class="nav-item me-2">
+                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
+                        href="{{ url('/' . ($page = 'paints')) }}">تشطيبات</a>
+                </li>
+                <!-- <li class="nav-item me-2">
                     <form method="GET" action="{{ route('search') }}">
 
                         <div class="input-group mb-3">
@@ -42,11 +46,11 @@
                         </div>
 
                     </form>
-                </li>
+                </li> -->
 
-                {{-- <li class="nav-item me-2">
+                <!-- {{-- <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='aboutpage') }}">معلومات عنا</a>
-          </li> --}}
+          </li> --}} -->
             </ul>
             <div class="d-flex">
                 <!-- <a href="#" class="text-black text-decoration-none nav-link rounded text-dark">تسجيل دخول <i class="fa fa-user"></i></a> -->
