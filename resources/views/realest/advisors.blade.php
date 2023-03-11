@@ -50,7 +50,7 @@
 
 
                         <div class="form-check">
-                            <a href="advisors?control=investment" class="btn btn-primary">إشتثمار</a>
+                            <a href="advisors?control=investment" class="btn btn-primary">إستثمار</a>
                         </div>
                         <div class="form-check">
                             <a href="advisors?control=residential" class="btn btn-primary">سكني</a>
