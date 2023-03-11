@@ -8,6 +8,7 @@ use App\Models\Facility;
 use App\Models\Image;
 use App\Models\Property;
 use App\Models\PropertyDetalis;
+use App\Models\PropetieType;
 use App\Models\Report;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
@@ -114,7 +115,7 @@ class PropertyController extends Controller
     }
 
 
-
+    
 
 
     public function index()

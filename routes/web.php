@@ -89,6 +89,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'dashboarddata')->name('dashboard')->middleware(['admin','auth']);
         Route::get('/propertys', 'index')->name('propertys')->middleware(['admin','auth']);
         Route::get('/propertyinsertview', 'indexinsert')->name('propertyinsertview');
+        
         Route::get('/propertyinsertweb', 'indexinsertweb')->name('propertyinsertweb');
         Route::post('/property.store', 'store')->name('property.store')->middleware(['auth']);
         Route::post('/property.recommended', 'recommended')->name('property.recommended')->middleware(['admin','auth']);
@@ -99,10 +100,10 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(CatogeryController::class)->group(function () {
        // Route::get('/catogery', 'index')->name('catogery');
-        Route::get('/catogeryview', 'index')->name('catogeryview')->middleware(['admin','auth']);
-        Route::post('/catogerystore', 'store')->name('catogery.store')->middleware(['admin','auth']);
-        Route::post('/catogeryupdate', 'update')->name('catogery.update')->middleware(['admin','auth']);
-        Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy')->middleware(['admin','auth']);
+        Route::get('/catogeryview', 'index')->name('catogeryview')->middleware(['auth']);
+        Route::post('/catogerystore', 'store')->name('catogery.store')->middleware(['auth']);
+        Route::post('/catogeryupdate', 'update')->name('catogery.update')->middleware(['auth']);
+        Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy')->middleware(['auth']);
     });
 
 
@@ -135,8 +136,16 @@ Route::middleware('auth')->group(function () {
     });
     Route::controller(AdvisorController::class)->group(function(){
         Route::get('/advisors','index')->name('advisors')->middleware(['auth']);
+        Route::get('space','space')->name('advisors.space');
+        Route::get('contract','contract')->name('advisors.contract');
+        Route::get('paying','paying')->name('advisors.paying');
+        Route::get('addressProp','addressProp')->name('advisors.addressProp');
+        Route::get('advisors.PurposeOfPurchase','PurposeOfPurchase')->name('advisors.PurposeOfPurchase');
+        Route::get('advisors.search','search')->name('advisors.search');
+        //Route::get('PurposeOfPurchase','PurposeOfPurchase')->name('PurposeOfPurchase')->middleware(['auth']);
     });
     Route::get('search',[SearchController::class,'search'])->name('search');
+    Route::get('property_ajax/{id}',[SearchController::class,'property_ajax'])->name('property_ajax');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

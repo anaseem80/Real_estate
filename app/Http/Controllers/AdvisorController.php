@@ -2,83 +2,60 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
+use App\Models\PropertyDetalis;
+use App\Models\PropetieType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdvisorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('realest.advisors');
+        $proprtietypes = PropetieType::all();
+        return view('realest.advisors', compact('proprtietypes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function PurposeOfPurchase(Request $request)
     {
-        //
+        $PurposeOfPurchase = $request->cate;
+        return view('realest.space', compact('PurposeOfPurchase'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function addressProp(Request $request)
     {
-        //
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        return view('realest.addressProp', compact('PurposeOfPurchase', 'space'));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function contract(Request $request)
     {
-        //
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        $address = $request->address;
+        return view('realest.contract', compact('PurposeOfPurchase', 'space', 'address'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function paying(Request $request)
     {
-        //
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        $address = $request->address;
+        $Rental = $request->Rental;
+        $Rental_term = $request->Rental_term;
+        if (isset($request->price)) {
+            $price = $request->price;
+        } else {
+            $price2 = $request->price2;
+        }
+        return view('realest.paying', compact('PurposeOfPurchase', 'space', 'address', 'Rental_term', 'price'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function search(Request $request)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        $address = $request->address;
+        $Rental = $request->Rental;
+        $Rental_term = $request->Rental_term;
+        $searchs = Property::where($request->all())->get();
+        return view('realest.result', compact('PurposeOfPurchase','space','address','Rental','Rental_term','searchs'));
     }
 }
