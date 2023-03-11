@@ -65,20 +65,20 @@
             <form action="{{ route('property.store') }}"method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-3 row">
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">اختر العقار</label>
                         <select name="proType_id" id="proType_id" class="form-control rounded-0 p-3">
-                            <option>أختر العقار</option>
-                            @foreach ($proprtietypes as $data)
+                        <option selected disabled>رجاء الأختيار</option>
+                        @foreach ($proprtietypes as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">نوع العقار</label>
                         <select class="form-control rounded-0 p-3" id="propertye_id" name="catogerie_id">
-                            <option>اختر نوع العقار</option>
-                        </select>
+                        <option selected disabled>رجاء الأختيار</option>                       
+                     </select>
                     </div>
                     <div class="form-group mb-3">
                         <label for="name">اسم العقار</label>
@@ -106,9 +106,10 @@
                     </div>
 
 
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="rent type">بيع/ايجار</label>
-                        <select class="form-control rounded-0 p-3" id="rent type" name="Rental_term">
+                        <select class="form-control rounded-0 p-3 rent" id="rent type" name="Rental_term">
+                        <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="سنوي">سنوي</option>
                             <option value="شهري">شهري</option>
                             <option value="يومي">يومي</option>
@@ -117,13 +118,10 @@
                     </div>
 
 
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-6 mb-3 mb-lg-0 direction" style="display:none">
                         <label for="direction">مكان السكن </label>
                         <select class="form-control rounded-0 p-3" id="direction" name="property_direction">
-                            <option title="Volvo is a car" value="شمالي">شمالي</option>
-                            <option value="غربي">غربي</option>
-                            <option value="شرقي">شرقي</option>
-                            <option value="جنوبي">جنوبي</option>
+                        <option selected disabled>رجاء الأختيار</option>
                         </select>
                     </div>
                 </div>
@@ -132,6 +130,7 @@
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">تحديد عدد الغرف</label>
                         <select class="form-control rounded-0 p-3" id="type" name="numbeer_room">
+                        <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -148,6 +147,7 @@
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="rent type">تحديد عدد الحمامات</label>
                         <select class="form-control rounded-0 p-3" id="rent type" name="numbeer_toilet">
+                            <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -160,10 +160,10 @@
                             <option value="10">10</option>
                         </select>
                     </div>
-                    <div class="col-lg-6 mb-3 mb-lg-0">
+                    <div class="col-lg-12 mb-3 mb-lg-0 payment-method" style="display:none">
                         <label for="rent type">طريقة الدفع</label>
                         <select class="form-control rounded-0 p-3" id="rent type" name="payment_method">
-                            <option title="Volvo is a car"></option>
+                            <option selected disabled>رجاء الأختيار</option>
                             <option value="قسط">قسط</option>
                             <option value="كاش">كاش</option>
                         </select>
@@ -171,10 +171,11 @@
                     <div class="form-group mb-3">
                         <label for="rent type">السعر الكلي</label>
                         <input type="text" name="pay" class="form-control ms-2 rounded-0 p-3"
-                            placeholder="البادجت/المزانية" </div>
+                            placeholder="البادجت/المزانية">
                         <div class="mb-4">
                             <p class="mg-b-10">مميزات العقار</p>
                             <select name="future[]" multiple="multiple" class="form-control select2">
+                                <option selected disabled>رجاء الأختيار</option>
                                 <option selected value="سطح خاص">سطح خاص</option>
                                 <option value="مدخل سيارة">مدخل سيارة</option>
                                 <option value="مكيفات">مكيفات</option>
@@ -250,7 +251,30 @@
 
 <script>
     $(document).ready(function(e) {
-
+        $(".rent").on("change",function(){
+            console.log()
+            if($(this).val() == "شهري" || $(this).val() == "يومي" || $(this).val() == "سنوي"){
+                $(".payment-method").css("display","none")
+            }else{
+                $(".payment-method").css("display","block")
+            }
+        })
+        $("#proType_id").on("change",function(){
+            $(".direction").css("display","block")
+            if($(this).val() == 1){
+                $("#direction").html(`
+                    <option selected="" disabled="">رجاء الأختيار</option>
+                    <option value="داخل الكومباوند">داخل الكومباوند</option>
+                    <option value="خارج الكومباوند">خارج الكومباوند</option>
+                `)
+            }else{
+                $("#direction").html(`
+                    <option selected="" disabled="">رجاء الأختيار</option>
+                    <option value="داخل المول">داخل المول</option>
+                    <option value="خارج المول">خارج المول</option>
+                `)
+            }
+        })
         $('#proType_id').change(function() {
             var id = $(this).val();
             console.log(id);
