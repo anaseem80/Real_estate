@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('status')->default(0);
             $table->integer('views')->default(0);
             $table->integer('recommended')->default(0);
+            $table->bigInteger('proType_id');
             $table->unsignedBigInteger('catogerie_id');
             $table->foreign('catogerie_id')->references('id')->on('catogerys')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');

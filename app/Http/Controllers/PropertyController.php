@@ -8,6 +8,7 @@ use App\Models\Facility;
 use App\Models\Image;
 use App\Models\Property;
 use App\Models\PropertyDetalis;
+use App\Models\PropetieType;
 use App\Models\Report;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
@@ -139,8 +140,8 @@ class PropertyController extends Controller
 
     public function indexinsertweb()
     {
-        $dataCatogery = Catogery::all();
-        return view('realest.property_insert_web', ['catogery' => $dataCatogery]);
+        $proprtietypes = PropetieType::all();
+        return view('realest.property_insert_web',compact('proprtietypes'));
     }
     public function indexinsert()
     {
@@ -174,6 +175,7 @@ class PropertyController extends Controller
             'price' => 'required|numeric',
             'payment_method' => 'required',
             'pay' => 'required',
+            'proType_id' => 'required',
             'description' => 'required|string',
             'space' => 'required|numeric',
             'numbeer_room' => 'required|integer',
@@ -193,6 +195,7 @@ class PropertyController extends Controller
             'image.required' => 'يرجي ادخال الصوره',
             'images.required' => 'يرجي ادخال الصوره',
             'country' => 'يرجي ادخال المدينه',
+            'proType_id.required' => 'يرجى إدخال العقار',
             'catogerie_id' => 'يرجي ادخال نوع العقار',
             'price' => 'يرجي ادخال السعر',
             'description' => 'يرجي ادخال الوصف',
@@ -218,6 +221,7 @@ class PropertyController extends Controller
         $property->pay = $request->pay;
         $property->views = 0;
         $property->country = $request->country;
+        $property->proType_id = $request->proType_id;
         $property->catogerie_id = $request->catogerie_id;
         $property->user_id = Getuserid();
         $property->picture = $path;
@@ -237,8 +241,6 @@ class PropertyController extends Controller
         $propertyDetalis->numbeer_room = $request->numbeer_room;
         $propertyDetalis->property_direction = $request->property_direction;
         $propertyDetalis->numbeer_toilet = $request->numbeer_toilet;
-        $propertyDetalis->longitude = "35.89999";
-        $propertyDetalis->latitude = "37.8888";
         //  $propertyDetalis->classification = $request->classification; 
         $propertyDetalis->seller_phone = $request->country;
         $propertyDetalis->property_id = $property->id;
@@ -274,7 +276,7 @@ class PropertyController extends Controller
         session()->flash('Add', 'تم اضافة القسم بنجاح ');
         // $dataCatogery = Catogery::all();
         // return redirect('realest.property_insert_view',['catogery' => $dataCatogery]);
-        return back();
+        return redirect()->route('test');
     }
 
     /**

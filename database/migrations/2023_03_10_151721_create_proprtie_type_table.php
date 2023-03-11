@@ -1,5 +1,6 @@
 <?php
 
+use Brick\Math\BigInteger;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('catogerys', function (Blueprint $table) {
-            $table->id();
+        Schema::create('proprtieType', function (Blueprint $table) {
+            $table->bigInteger('id')->autoIncrement();
             $table->string('name');
-            $table->string('Created_by');
-            $table->string('image_path');
-            $table->bigInteger('proType_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catogerys');
+        Schema::dropIfExists('proprtieType');
     }
 };
