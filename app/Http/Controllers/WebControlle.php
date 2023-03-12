@@ -49,7 +49,7 @@ class WebControlle extends Controller
     public function detalisscreen($id)
     {
 
-        $property = Property::with('property_details', 'images', 'facilities', 'user', 'catogery')->find($id);
+        $property = Property::whereHas('user')->with('property_details', 'images', 'facilities', 'user', 'catogery')->find($id);
 
         if (!$property) {
             return response()->json(['error' => 'Property not found'], 404);

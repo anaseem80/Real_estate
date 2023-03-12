@@ -201,7 +201,7 @@
                         <ul class="property-main-features list-unstyled d-flex justify-content-between flex-wrap p-sm-5 p-lg-4 mt-4">
                             <li>اسم العقار <span class="english-font text-dark text-dark d-block">{{$property->name}}</span></li>
                             <li>مكان العقار <span class="english-font text-dark text-dark d-block">{{$property->country}}</span></li>
-                            <li>رقم التواصل <span class="english-font text-dark text-dark d-block">{{$property->user->phone}}</span></li>
+                            <li>اسم المعلن<span class="english-font text-dark text-dark d-block">{{$property->user->name}}</span></li>
                             <li>رقم العقار <span class="english-font text-dark text-dark d-block">{{$property->property_details->id}}</span></li>
                             <li>المساحة الكليه <span class="english-font text-dark text-dark d-block">{{$property->property_details->space}} / m</span></li>
                         </ul>                        
