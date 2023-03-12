@@ -16,19 +16,17 @@
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'propertyinsertweb')) }}">إضافة عقار</a>
                 </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
-                        href="{{ url('/' . ($page = 'blogview')) }}">مدونه</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
-                        href="{{ url('/' . ($page = 'terms')) }}">الشروط والأحكام</a>
-                </li>
+                
+                
 
-                {{-- <li class="nav-item me-2">
+                <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'advisors')) }}">إستشارة عقارية</a>
-                </li>    --}}
+                </li> 
+                <li class="nav-item me-2">
+                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
+                        href="{{ route('paints') }}">خدمة التشطيب</a>
+                </li>    
                 <li class="nav-item me-2">
                     <form method="GET" action="{{ route('search') }}">
 

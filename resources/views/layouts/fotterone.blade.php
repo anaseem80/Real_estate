@@ -29,9 +29,13 @@
                         <li class="mb-3"><a href="#" class="text-decoration-none text-light">الرابط الرابع</a>
                         </li>
                         <li class="mb-3">
-                            <a class="text-decoration-none text-light" 
-                                href="{{ url('/' . ($page = 'advisors')) }}">إستشارة عقارية</a>
+                            <a class="text-decoration-none text-light" aria-current="page"
+                                href="{{ url('/' . ($page = 'blogview')) }}">مدونه</a>
                         </li>
+                        <li class="mb-3">
+                            <a class="text-decoration-none text-light" aria-current="page"
+                                href="{{ url('/' . ($page = 'terms')) }}">الشروط والأحكام</a>
+                        </li>   
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-lg-0">
