@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-xl-2 p-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-xl-2 p-0">
                 <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'test')) }}"
@@ -15,20 +15,33 @@
                 </li>
                 <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
-                        href="{{ url('/' . ($page = 'propertyinsertweb')) }}">إضافة عقار</a>
-                </li>
-                
-                
-
-                <li class="nav-item me-2">
-                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'advisors')) }}">إستشارة عقارية</a>
                 </li> 
                 <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ route('paints') }}">خدمة التشطيب</a>
-                </li>    
+                </li>
+                @auth
+                @if (Auth::user()->user_type == 'admin')
                 <li class="nav-item me-2">
+                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
+                        href="{{ url('/' . ($page = 'dashboard')) }}">لوحة التحكم</a>
+                </li>
+                @endif
+                <li class="nav-item me-2"><a class="nav-link text-light rounded p-3 active" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                                        class="bx bx-log-out"></i>تسجيل خروج</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                </li>
+                @endauth
+                <li class="nav-item me-2">
+                    <a class="nav-link text-light rounded p-3 active" aria-current="page"
+                        href="{{ url('/' . ($page = 'propertyinsertweb')) }}">إضافة عقار</a>
+                </li>
+                <!-- <li class="nav-item me-2">
                     <form method="GET" action="{{ route('search') }}">
 
                         <div class="input-group mb-3">
@@ -41,14 +54,14 @@
                         </div>
 
                     </form>
-                </li>
+                </li> -->
 
                 {{-- <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='aboutpage') }}">معلومات عنا</a>
           </li> --}}
             </ul>
-            <div class="d-flex">
-                <!-- <a href="#" class="text-black text-decoration-none nav-link rounded text-dark">تسجيل دخول <i class="fa fa-user"></i></a> -->
+            <!-- <div class="d-flex">
+                 <a href="#" class="text-black text-decoration-none nav-link rounded text-dark">تسجيل دخول <i class="fa fa-user"></i></a> 
 
                 @auth
                     <div class="dropdown">
@@ -79,7 +92,7 @@
                     </div>
                 @endauth
 
-            </div>
+            </div> -->
         </div>
     </div>
 </nav>
