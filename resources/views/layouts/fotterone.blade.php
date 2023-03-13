@@ -20,14 +20,6 @@
                     <h3>روابط سريعه </h3>
                     <span class="heading-divider"></span>
                     <ul class="links">
-                        <li class="mb-3"><a href="#" class="text-decoration-none text-light">الرابط الاول</a>
-                        </li>
-                        <li class="mb-3"><a href="#" class="text-decoration-none text-light">الرابط الثاني</a>
-                        </li>
-                        <li class="mb-3"><a href="#" class="text-decoration-none text-light">الرابط الثالث</a>
-                        </li>
-                        <li class="mb-3"><a href="#" class="text-decoration-none text-light">الرابط الرابع</a>
-                        </li>
                         <li class="mb-3">
                             <a class="text-decoration-none text-light" aria-current="page"
                                 href="{{ url('/' . ($page = 'blogview')) }}">مدونه</a>

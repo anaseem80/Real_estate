@@ -106,7 +106,8 @@
                                 <div class="card" dir="rtl">
                                     <div class="position-relative p-1">
                                         <div class="item position-relative">
-                                            <img src="/{{$item->picture}}" class="card-img-top" height="270" alt="...">
+                                        
+                                            <img src="{{ URL::asset($item->picture) }}" class="card-img-top" height="270" alt="...">
                                             <p class="status position-absolute text-light bg-danger text-white px-3 py-1 rounded fw-bold"><span class="english-font">اعلي تقييم</p>   
                                         </div>                                
                                     </div>
