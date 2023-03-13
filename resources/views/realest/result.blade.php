@@ -91,11 +91,18 @@
                 @else
                     <h4 class="alert alert-danger">لا يوجد بيانات مطابقة للبيانات التي أدخلتها
                         تواصل مع فريق الدعم
-                        <a href="http://wa.me/+201158232428" class="btn btn-success">WhatsApp</a> </h4>
+                        <a href="http://wa.me/+201158232428" class="btn btn-success">WhatsApp</a>
+                    </h4>
             @endif
         </div>
     </div>
     </div>
+    <input class="form-control" autocomplete="off" placeholder="مساحة {{ $PurposeOfPurchase }}" hidden
+        value="{{ $PurposeOfPurchase }}" type="text" name="cate">
+    <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $space }}"
+        type="text" name="space">
+    <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $address }}"
+        type="text" name="address">
     <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>

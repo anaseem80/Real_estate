@@ -154,43 +154,15 @@
 
                 @foreach ($property->images as $item)
                 <swiper-slide>
-                    <a href="/{{$item->image_path}}" data-lightbox="image-1" data-title="My caption"><img src="/{{$item->image_path}}" /></a>
+                
+                    <a href="{{ URL::asset($item->image_path) }}" data-lightbox="image-1" data-title="My caption"><img src="{{ URL::asset($item->image_path) }}" /></a>
                 </swiper-slide>
                 @endforeach
               
 
-                {{-- <swiper-slide>
-                    <a href="/assets/img/backgrounds/pc1.jpg" data-lightbox="image-1" data-title="My caption"><img src="/assets/img/backgrounds/pc1.jpg" /></a>
-                </swiper-slide>
-
-                <swiper-slide>
-                    <a href="/assets/img/backgrounds/pc2.jpg" data-lightbox="image-1" data-title="My caption"><img src="/assets/img/backgrounds/pc2.jpg" /></a>
-                </swiper-slide>
-
-                <swiper-slide>
-                    <a href="/assets/img/backgrounds/pc1.jpg" data-lightbox="image-1" data-title="My caption"><img src="/assets/img/backgrounds/pc3.jpg" /></a>
-                </swiper-slide> --}}
-
 
 
                 </swiper-container>
-
-
-                {{-- <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true"
-                watch-slides-progress="true">
-                <swiper-slide>
-                    <img src="/assets/img/backgrounds/pc1.jpg" />
-                </swiper-slide>
-                <swiper-slide>
-                    <img src="/assets/img/backgrounds/pc1.jpg" />
-                </swiper-slide>
-                <swiper-slide>
-                    <img src="/assets/img/backgrounds/pc2.jpg" />
-                </swiper-slide>
-                <swiper-slide>
-                    <img src="/assets/img/backgrounds/pc3.jpg" />
-                </swiper-slide>
-                </swiper-container> --}}
                 </div>
                 <div class="row real-estate-details">
                     <div class="col-lg-8">
@@ -201,14 +173,14 @@
                         <ul class="property-main-features list-unstyled d-flex justify-content-between flex-wrap p-sm-5 p-lg-4 mt-4">
                             <li>اسم العقار <span class="english-font text-dark text-dark d-block">{{$property->name}}</span></li>
                             <li>مكان العقار <span class="english-font text-dark text-dark d-block">{{$property->country}}</span></li>
-                            <li>رقم التواصل <span class="english-font text-dark text-dark d-block">{{$property->user->phone}}</span></li>
+                            <li>اسم المعلن<span class="english-font text-dark text-dark d-block">{{$property->user->name}}</span></li>
                             <li>رقم العقار <span class="english-font text-dark text-dark d-block">{{$property->property_details->id}}</span></li>
                             <li>المساحة الكليه <span class="english-font text-dark text-dark d-block">{{$property->property_details->space}} / m</span></li>
                         </ul>                        
                         <div class="real-estate-description">
                             <h3 class="mt-5">الوصف</h3>
                             <hr class="my-4">
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر" (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.</p>
+                            <p>{{$property->name}} </p>
                         </div>
                         <div class="real-estate-description">
                             <h3 class="mt-5">التفاصيل</h3>

@@ -91,6 +91,7 @@
                                                     {{ __('تسجيل الدخول') }}
                                                 </button>
                                             </form>
+                                            <a href="{{ route('register') }}" class="btn btn-purple btn-block">حساب جديد</a>
                                         </div>
                                     </div>
                                 </div>

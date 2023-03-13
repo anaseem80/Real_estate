@@ -13,36 +13,49 @@ class AdvisorController extends Controller
     public function index()
     {
         $proprtietypes = PropetieType::all();
-        return view('realest.advisors',compact('proprtietypes'));
+        return view('realest.advisors', compact('proprtietypes'));
+    }
+
+    public function PurposeOfPurchase(Request $request)
+    {
+        $PurposeOfPurchase = $request->cate;
+        return view('realest.space', compact('PurposeOfPurchase'));
+    }
+    public function addressProp(Request $request)
+    {
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        return view('realest.addressProp', compact('PurposeOfPurchase', 'space'));
+    }
+    public function contract(Request $request)
+    {
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        $address = $request->address;
+        return view('realest.contract', compact('PurposeOfPurchase', 'space', 'address'));
+    }
+    public function paying(Request $request)
+    {
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        $address = $request->address;
+        $Rental = $request->Rental;
+        $Rental_term = $request->Rental_term;
+        if (isset($request->price)) {
+            $price = $request->price;
+        } else {
+            $price2 = $request->price2;
+        }
+        return view('realest.paying', compact('PurposeOfPurchase', 'space', 'address', 'Rental_term', 'price'));
     }
     public function search(Request $request)
     {
-        if($request->cate != null)
-        {
-            $propertys = Property::where('catogerie_id','=',$request->cate)->get();
-            if($propertys)
-            {
-                $searchs = Property::where('status','1')->where('catogerie_id','=',$request->cate)->get();
-            } 
-            elseif($request->space != null)
-            {
-                $searchs = PropertyDetalis::whereHas('property')->whereRelation(['property','name',$request->cate,'property','status','1'])->where('space',$request->space)->get();
-            }
-            elseif($request->country != null)
-            {
-                $searchs = Property::where('country', 'LIKE', '%' . $request->country . '%')->where('status','1')->get();
-            }
-            elseif($request->type != null)
-            {
-                $searchs = PropertyDetalis::where('Rental_term', 'LIKE', '%' . $request->type . '%')->where('status','1')->get();
-            }
-            elseif($request->price != null)
-            {
-                $searchs = Property::where('pay', 'LIKE', '%' . $request->price . '%')->where('status','1')->get();
-            }
-            return view('realest.result',compact('searchs'));
-
-           
-        }
-    } 
+        $PurposeOfPurchase = $request->cate;
+        $space =  $request->space;
+        $address = $request->address;
+        $Rental = $request->Rental;
+        $Rental_term = $request->Rental_term;
+        $searchs = Property::where($request->all())->get();
+        return view('realest.result', compact('PurposeOfPurchase','space','address','Rental','Rental_term','searchs'));
+    }
 }

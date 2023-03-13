@@ -48,12 +48,12 @@ class RegisteredUserController extends Controller
         $user->country = $request->country;
         $user->phone = $request->phone;
         $user->save();
-  
+        return redirect()->route('login');
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
     }
 }

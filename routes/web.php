@@ -89,6 +89,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'dashboarddata')->name('dashboard')->middleware(['admin','auth']);
         Route::get('/propertys', 'index')->name('propertys')->middleware(['admin','auth']);
         Route::get('/propertyinsertview', 'indexinsert')->name('propertyinsertview');
+        
         Route::get('/propertyinsertweb', 'indexinsertweb')->name('propertyinsertweb');
         Route::post('/property.store', 'store')->name('property.store')->middleware(['auth']);
         Route::post('/property.recommended', 'recommended')->name('property.recommended')->middleware(['admin','auth']);
@@ -135,6 +136,11 @@ Route::middleware('auth')->group(function () {
     });
     Route::controller(AdvisorController::class)->group(function(){
         Route::get('/advisors','index')->name('advisors')->middleware(['auth']);
+        Route::get('space','space')->name('advisors.space');
+        Route::get('contract','contract')->name('advisors.contract');
+        Route::get('paying','paying')->name('advisors.paying');
+        Route::get('addressProp','addressProp')->name('advisors.addressProp');
+        Route::get('advisors.PurposeOfPurchase','PurposeOfPurchase')->name('advisors.PurposeOfPurchase');
         Route::get('advisors.search','search')->name('advisors.search');
         //Route::get('PurposeOfPurchase','PurposeOfPurchase')->name('PurposeOfPurchase')->middleware(['auth']);
     });
