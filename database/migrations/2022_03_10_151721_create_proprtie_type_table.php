@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('proprtieType', function (Blueprint $table) {
+        Schema::create('proprtietype', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->string('name');
             $table->timestamps();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proprtieType');
+        Schema::dropIfExists('proprtietype');
     }
 };
