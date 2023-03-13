@@ -130,7 +130,7 @@
                                         <div class="card-body mt-2 p-0">
                                             <div class="px-4">
                                                 <p class="text-danger fw-bold">حصري</p>
-                                                <a href="/public/detelisscreen/{{ $item->id }}"
+                                                <a href="{{ route('detelisscreen',$item->id) }}"
                                                     class="text-decoration-none">
                                                     <h5 class="card-title mt-3 fw-bold gray-color">{{ $item->name }}
                                                     </h5>

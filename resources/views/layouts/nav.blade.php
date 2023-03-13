@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-lg py-3" id="navbar">
     <div class="container">
-    
+
         <a class="navbar-brand" href="{{ url('/' . ($page = 'test')) }}"><img src="{{ URL::asset('assets/img/brand/logo.jpeg') }}" alt="" width="130"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,13 +10,13 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-xl-2 p-0">
                 <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
-                        href="{{ url('/' . ($page = 'test')) }}"
+                        href="{{ url('/' . ($page = 'home')) }}"
                         @auth {{ 'style=display:block;' }} @endauth>الرئيسية</a>
                 </li>
                 <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ url('/' . ($page = 'advisors')) }}">إستشارة عقارية</a>
-                </li> 
+                </li>
                 <li class="nav-item me-2">
                     <a class="nav-link text-light rounded p-3 active" aria-current="page"
                         href="{{ route('paints') }}">خدمة التشطيب</a>
@@ -61,7 +61,7 @@
           </li> --}} -->
             </ul>
             <!-- <div class="d-flex">
-                 <a href="#" class="text-black text-decoration-none nav-link rounded text-dark">تسجيل دخول <i class="fa fa-user"></i></a> 
+                 <a href="#" class="text-black text-decoration-none nav-link rounded text-dark">تسجيل دخول <i class="fa fa-user"></i></a>
 
                 @auth
                     <div class="dropdown">

@@ -65,11 +65,11 @@ Route::get('/blogs/{id}', 'show')->name('showblog');
 
 
 Route::controller(WebControlle::class)->group(function () {
-Route::get('/','index')->name('test');
-Route::get('/test','index')->name('test');
+Route::get('/','index')->name('home');
+Route::get('/home','index')->name('test');
 Route::post('/addenqueris','addenqueris')->name('addenqueris');
 Route::post('/addreport', 'addreport')->name('addreport');
-Route::get('/public/detelisscreen/{id}', 'detalisscreen')->name('public/detelisscreen');
+Route::get('/detelisscreen/{id}', 'detalisscreen')->name('detelisscreen');
 Route::get('/moreproperty/{country}', 'moreproperty')->name('moreproperty');
 Route::get('/aboutpage', 'aboutpage')->name('aboutpage');
 Route::get('/terms', 'terms')->name('terms');
