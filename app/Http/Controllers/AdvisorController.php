@@ -41,12 +41,9 @@ class AdvisorController extends Controller
         $address = $request->address;
         $Rental = $request->Rental;
         $Rental_term = $request->Rental_term;
-        if (isset($request->price)) {
-            $price = $request->price;
-        } else {
-            $price2 = $request->price2;
-        }
-        return view('realest.paying', compact('PurposeOfPurchase', 'space', 'address', 'Rental_term', 'price'));
+        $price = $request->price;
+        $price2 = $request->price2;
+        return view('realest.paying', compact('PurposeOfPurchase', 'space', 'address', 'Rental_term', 'price', 'price2'));
     }
     public function search(Request $request)
     {
@@ -56,6 +53,6 @@ class AdvisorController extends Controller
         $Rental = $request->Rental;
         $Rental_term = $request->Rental_term;
         $searchs = Property::where($request->all())->get();
-        return view('realest.result', compact('PurposeOfPurchase','space','address','Rental','Rental_term','searchs'));
+        return view('realest.result', compact('PurposeOfPurchase', 'space', 'address', 'Rental', 'Rental_term', 'searchs'));
     }
 }

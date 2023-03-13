@@ -24,11 +24,11 @@ class WebControlle extends Controller
             ->get();
         $propertiesviews = Property::orderBy('views', 'desc')->take(10)->get();
         $newProperties = Property::orderBy('created_at', 'desc')->where('status', 1)->where('catogerie_id' ,'!=' , '5')->where('catogerie_id' , '!=' , '6')->limit(10)->get();
-        $newCommercial = Property::orderBy('created_at', 'desc')->where('status', 1)->where('catogerie_id' ,'=' , '5')->orWhere('catogerie_id' , '=' , '6')->limit(10)->get();
+        $newCommercial = Property::orderBy('created_at', 'desc')->where('status', 1)->whereBetween('catogerie_id',[5,6])->get();
         $propertiesRec = Property::where('recommended', 1)->get();
         $newforsale = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'للبيع')->limit(10)->get();
         $newForRent = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'سنوي')->orWhere('Rental_term', 'شهري')->orWhere('Rental_term', 'يومي')->limit(10)->get();
-        
+
         $catogerys = Catogery::all();
         return view(
             'realest.test',
@@ -45,7 +45,7 @@ class WebControlle extends Controller
         );
     }
 
-    
+
 
 
     public function detalisscreen($id)
@@ -61,18 +61,16 @@ class WebControlle extends Controller
 
     public function moreproperty($country)
     {
-        $property = Property::where('country', $country)->get();
+        $property = Property::where('country',$country)->get();
 
-
-
-        return view('realest.more_view', ['property' => $property]);
+        return view('realest.more_view', ['property' => $property,'country' => $country]);
     }
 
 
 
     public function morepropertyCato($catogery)
     {
-        $property = Property::where('catogerie_id', $catogery)->get();
+        $property = Property::whereHas('catogery')->where('catogerie_id', $catogery)->get();
 
 
 

@@ -58,7 +58,7 @@
                                 <div class="form-group mb-3" id="budget" style="display: none">
                                     <label for="price">الميزانية</label>
                                     <input type="number" autocomplete="off" id="price" name="price"
-                                        class="form-control ms-2 rounded-0 p-3" placeholder="السعر لكل متر" required>
+                                        class="form-control ms-2 rounded-0 p-3" placeholder="السعر لكل متر">
                                 </div>
                                 <div class="form-group mb-3" id="totalPrice" style="display: none">
                                     <label for="price">السعر الكلي</label>

@@ -69,7 +69,7 @@ Route::get('/','index')->name('test');
 Route::get('/test','index')->name('test');
 Route::post('/addenqueris','addenqueris')->name('addenqueris');
 Route::post('/addreport', 'addreport')->name('addreport');
-Route::get('/detelisscreen/{id}', 'detalisscreen')->name('detelisscreen');
+Route::get('public/detelisscreen/{id}', 'detalisscreen')->name('public/detelisscreen');
 Route::get('/moreproperty/{country}', 'moreproperty')->name('moreproperty');
 Route::get('/aboutpage', 'aboutpage')->name('aboutpage');
 Route::get('/terms', 'terms')->name('terms');
@@ -89,7 +89,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'dashboarddata')->name('dashboard')->middleware(['admin','auth']);
         Route::get('/propertys', 'index')->name('propertys')->middleware(['admin','auth']);
         Route::get('/propertyinsertview', 'indexinsert')->name('propertyinsertview');
-        
+
         Route::get('/propertyinsertweb', 'indexinsertweb')->name('propertyinsertweb');
         Route::post('/property.store', 'store')->name('property.store')->middleware(['auth']);
         Route::post('/property.recommended', 'recommended')->name('property.recommended')->middleware(['admin','auth']);
@@ -97,7 +97,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/property.destroy', 'destroy')->name('property.destroy')->middleware(['admin','auth']);
         Route::get('/adsproperty', 'ads')->name('adsproperty')->middleware(['admin','auth']);
     });
-    
+
     Route::controller(CatogeryController::class)->group(function () {
        // Route::get('/catogery', 'index')->name('catogery');
         Route::get('/catogeryview', 'index')->name('catogeryview')->middleware(['auth']);
@@ -114,7 +114,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/setting.destroy', 'destroy')->name('setting.destroy')->middleware(['admin','auth']);
     });
 
-    
+
     Route::controller(ReportController::class)->group(function () {
         Route::get('/report', 'index')->name('report')->middleware(['admin','auth']);
         Route::post('/report.store', 'store')->name('report.store')->middleware(['admin','auth']);
@@ -151,7 +151,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    
+
 });
 
 //Route::get('/{page}', 'AdminController@index');

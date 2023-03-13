@@ -20,7 +20,7 @@
 <body>
     @php
         $control = isset($_GET['control']) ? $_GET['control'] : 'advisors';
-        
+
     @endphp
     @include('layouts.headone')
     @include('layouts.nav')
@@ -32,7 +32,7 @@
                     <div class="container">
                         <p class="fs-5">
                             <strong>أهلا بي حضرتك في i REBC ، اضغط متابعة عشان نكمل :)
-                                : اظهار زر متابعة يدخله ع السؤال الثاني</ strong>
+                                </ strong>
                                 <a href="{{ url('advisors?control=PurposeOfPurchase') }}"
                                     class="btn btn-info">متابعة</a>
                         </p>

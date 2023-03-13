@@ -115,7 +115,7 @@ class PropertyController extends Controller
     }
 
 
-    
+
 
 
     public function index()
@@ -178,9 +178,9 @@ class PropertyController extends Controller
             'proType_id' => 'required',
             'description' => 'required|string',
             'space' => 'required|numeric',
-            'numbeer_room' => 'required|integer',
+            'numbeer_room' => 'integer',
             'property_direction' => 'required|string',
-            'numbeer_toilet' => 'required|integer',
+            'numbeer_toilet' => 'integer',
             // 'classification' => 'required|string',
             // 'seller_phone' => 'string',
             "Rental_term" => 'required|string',
@@ -213,7 +213,7 @@ class PropertyController extends Controller
         $imagessss = $request->file('images');
 
         $filename = time() . '.' . $imagessss[0]->getClientOriginalExtension();
-        $path = $imagessss[0]->storeAs('catogeryimage', $filename, 'Taha'); //اسم الفولدر /اسم الملف /disksال 
+        $path = $imagessss[0]->storeAs('catogeryimage', $filename, 'Taha'); //اسم الفولدر /اسم الملف /disksال
 
         $property = new Property();
         $property->name = $request->name;
@@ -237,11 +237,11 @@ class PropertyController extends Controller
         $propertyDetalis->price = $request->price;
         $propertyDetalis->description = $request->description;
         $propertyDetalis->space = $request->space;
-        //  $propertyDetalis->numbeer_toilet = $request->name; 
+        //  $propertyDetalis->numbeer_toilet = $request->name;
         $propertyDetalis->numbeer_room = $request->numbeer_room;
         $propertyDetalis->property_direction = $request->property_direction;
         $propertyDetalis->numbeer_toilet = $request->numbeer_toilet;
-        //  $propertyDetalis->classification = $request->classification; 
+        //  $propertyDetalis->classification = $request->classification;
         $propertyDetalis->seller_phone = $request->country;
         $propertyDetalis->property_id = $property->id;
         $propertyDetalis->Rental_term = "1.55";

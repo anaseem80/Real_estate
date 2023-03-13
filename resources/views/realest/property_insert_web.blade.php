@@ -77,7 +77,7 @@
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">نوع العقار</label>
                         <select class="form-control rounded-0 p-3" id="propertye_id" name="catogerie_id">
-                        <option selected disabled>رجاء الأختيار</option>                       
+                        <option selected disabled>رجاء الأختيار</option>
                      </select>
                     </div>
                     <div class="form-group mb-3">
@@ -126,9 +126,9 @@
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
-                    <div class="col-lg-6 mb-3 mb-lg-0">
+                    <div style="display: none" id="numbeer_room" class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">تحديد عدد الغرف</label>
-                        <select class="form-control rounded-0 p-3" id="type" name="numbeer_room">
+                        <select  class="form-control rounded-0 p-3" id="type" name="numbeer_room">
                         <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="1">1</option>
                             <option value="2">2</option>
@@ -143,9 +143,9 @@
                         </select>
                     </div>
 
-                    <div class="col-lg-6 mb-3 mb-lg-0">
+                    <div class="col-lg-6 mb-3 mb-lg-0" id="numbeer_toilet" style="display: none">
                         <label for="rent type">تحديد عدد الحمامات</label>
-                        <select class="form-control rounded-0 p-3" id="rent type" name="numbeer_toilet">
+                        <select  class="form-control rounded-0 p-3" id="rent type" name="numbeer_toilet">
                             <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="1">1</option>
                             <option value="2">2</option>
@@ -301,6 +301,19 @@
                 $('#propertye_id').empty();
             }
         });
+</script>
+<script>
+    $("#proType_id").on("change",function(){
+        if($(this).val() == 1){
+            $("#numbeer_room").css('display','block')
+            $("#numbeer_toilet").css('display','block')
+        }
+        else
+        {
+            $("#numbeer_room").css('display','none')
+            $("#numbeer_toilet").css('display','none')
+        }
+    });
 </script>
 </body>
 </html>
