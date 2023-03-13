@@ -23,7 +23,8 @@ class WebControlle extends Controller
             ->limit(4)
             ->get();
         $propertiesviews = Property::orderBy('views', 'desc')->take(10)->get();
-        $newProperties = Property::orderBy('created_at', 'desc')->where('status', 1)->limit(10)->get();
+        $newProperties = Property::orderBy('created_at', 'desc')->where('status', 1)->where('catogerie_id' ,'!=' , '5')->where('catogerie_id' , '!=' , '6')->limit(10)->get();
+        $newCommercial = Property::orderBy('created_at', 'desc')->where('status', 1)->where('catogerie_id' ,'=' , '5')->orWhere('catogerie_id' , '=' , '6')->limit(10)->get();
         $propertiesRec = Property::where('recommended', 1)->get();
         $newforsale = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'للبيع')->limit(10)->get();
         $newForRent = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'سنوي')->orWhere('Rental_term', 'شهري')->orWhere('Rental_term', 'يومي')->limit(10)->get();
@@ -35,6 +36,7 @@ class WebControlle extends Controller
                 'mostCountries' => $mostCountries,
                 'propertiesviews' => $propertiesviews,
                 'newProperties' => $newProperties,
+                'newCommercial' => $newCommercial,
                 'propertiesRec' => $propertiesRec->where('status', 1),
                 'catogerys' =>  $catogerys,
                 'newforsale' => $newforsale,

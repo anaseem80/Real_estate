@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     use HasFactory;
+    protected $table = 'properties';
+    protected $fillable = [
+        'name','picture','country','payment_method','pay','status','views',
+        'recommended','catogerie_id','user_id'
+    ];
     public function images()
     {
         return $this->hasMany(Image::class,'property_id');

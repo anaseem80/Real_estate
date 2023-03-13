@@ -11,7 +11,7 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-   
+
 
 
     /**
@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
 
     public function run()
-    {   
+    {
         //  User::truncate();
         //  Catogery::truncate();
         //  Property::truncate();
@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             UsersTableSeeder::class,
+            PropetieTypeTable::class,
             CatogerysTableSeeder::class,
             PropertiesTableSeeder::class,
             SettingsTableSeeder::class,
@@ -42,6 +43,4 @@ class DatabaseSeeder extends Seeder
             BlogsTableSeeder::class,
         ]);
     }
-
-   
 }

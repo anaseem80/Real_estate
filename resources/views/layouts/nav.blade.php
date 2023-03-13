@@ -56,9 +56,9 @@
                     </form>
                 </li> -->
 
-                {{-- <li class="nav-item me-2">
+                <!-- {{-- <li class="nav-item me-2">
             <a class="nav-link text-light rounded p-3 active" aria-current="page" href="{{ url('/' . $page='aboutpage') }}">معلومات عنا</a>
-          </li> --}}
+          </li> --}} -->
             </ul>
             <!-- <div class="d-flex">
                  <a href="#" class="text-black text-decoration-none nav-link rounded text-dark">تسجيل دخول <i class="fa fa-user"></i></a> 

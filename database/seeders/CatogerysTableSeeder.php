@@ -17,34 +17,58 @@ class CatogerysTableSeeder extends Seeder
     {
         
              Catogery::create([
-                'name' => 'منازل',
+                'name' => 'منزل',
                 'Created_by' => 'محمود محمد',
                 'image_path' => 'catogery/1.png',
+                'proType_id' => '1',
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
 
             Catogery::create([
-                'name' => 'شاليهات',
+                'name' => 'شاليه',
                 'Created_by' => 'محمود محمد',
                 'image_path' => 'catogery/2.png',
+                'proType_id' => '1',
+
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
         
 
             Catogery::create([
-                'name' => 'فنادق',
+                'name' => 'فندق',
                 'Created_by' => 'محمود محمد',
                 'image_path' => 'catogery/3.png',
+                'proType_id' => '1',
+
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
 
             Catogery::create([
-                'name' => 'فلل',
+                'name' => 'فيلا',
                 'Created_by' => 'محمود محمد',
                 'image_path' => 'catogery/4.png',
+                'proType_id' => '1',
+
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            Catogery::create([
+                'name' => 'محل',
+                'Created_by' => 'محمود محمد',
+                'image_path' => 'catogery/4.png',
+                'proType_id' => '2',
+
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            Catogery::create([
+                'name' => 'مكتب',
+                'Created_by' => 'محمود محمد',
+                'image_path' => 'catogery/4.png',
+                'proType_id' => '2',
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
