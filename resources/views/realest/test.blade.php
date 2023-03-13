@@ -67,8 +67,6 @@
   </button>
 </div> -->
 
-
-
     <div class="3kares-most-visited p-sm-5 p-1 mt-5">
         <div class="container">
             <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -134,9 +132,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <div class="3kares-most-visited p-sm-5 p-1">
         <div class="container">
@@ -652,21 +647,21 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.fotterone')
-            <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
-            <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
-            <script src="{{ asset('assets/js/app.js') }}"></script>
-            <script src="{{ asset('assets/js/libraries/bootstrap.min.js') }}"></script>
-            <script src="{{ asset('assets/js/libraries/a1a75d5546.js') }}"></script>
-            <script src="{{ asset('assets/s/libraries/swiper-bundle.min.js') }}"></script>
-</body>
-
+        </div>
+    </div>
+    @include('layouts.fotterone')
+        <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
+        <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/app.js') }}"></script>
+        <script src="{{ asset('assets/js/libraries/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/libraries/a1a75d5546.js') }}"></script>
+        <script src="{{ asset('assets/s/libraries/swiper-bundle.min.js') }}"></script>
+    @section('js')
+        <!--Internal  Chart.bundle js -->
+        <script src="{{ URL::asset('assets/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+        <!-- Internal Select2.min js -->
+        <script src="{{ URL::asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+        <script src="{{ URL::asset('assets/js/select2.js') }}"></script>
+    @endsection
+    </body>
 </html>
-
-@section('js')
-    <!--Internal  Chart.bundle js -->
-    <script src="{{ URL::asset('assets/plugins/chart.js/Chart.bundle.min.js') }}"></script>
-    <!-- Internal Select2.min js -->
-    <script src="{{ URL::asset('assets/plugins/select2/js/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/select2.js') }}"></script>
-@endsection

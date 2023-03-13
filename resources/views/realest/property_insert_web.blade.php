@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <!--- Internal Select2 css-->
-    <link href="{{ URL::asset('assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <title>اضافة عقار</title>
 </head>
 
@@ -125,7 +125,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group mb-3 row">
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">تحديد عدد الغرف</label>
@@ -195,42 +194,25 @@
                             class="form-control ms-2 rounded-0 p-3 english-font" placeholder="ادخل رقم الهاتف"
                             multiple id="gallery-photo-add" enctype="multipart/form-data" multiple required>
                     </div>
-
-
-
-
-                    {{--  <div id="location-data" style="display: flex; align-items: center;">
-                        <label for="latitude" style="display: inline-block; margin-right: 10px;">خطوط
-                            العرض:</label>
-                        <input autocomplete="off" class="form-control" type="text" id="latitude"
-                            name="latitude" readonly style="display: inline-block;">
-                        <label for="longitude" style="display: inline-block; margin-right: 10px;">خطوط
-                            الطول:</label>
-                        <input class="form-control" type="text" id="longitude" name="longitude" readonly
-                            style="display: inline-block;">
-                    </div>  --}}
-                    <P></P>
-
-                    <div class="col-md-6 ">
+                    <div class="col-12">
                         <div class="form-group">
                             <label for="projectinput1"> العنوان</label>
-                            <input autocomplete="off"type="text" id="pac-input" class="form-control"
-                                placeholder="البحث" name="address">
+                            <input autocomplete="off"type="text" id="pac-input" class="form-control ms-2 rounded-0 p-3"
+                                placeholder="العنوان" name="address">
 
                             {{-- @error('address')
                             <span class="text-danger"> {{$message}}</span>
                             @enderror --}}
                         </div>
                     </div>
-
-
-
-
                     <input type="submit" value="إضافة"
                         class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
+                </div>
             </form>
         </div>
     </div>
+
+    @include('layouts.fotterone')
 
     <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
@@ -246,10 +228,9 @@
     <script src="{{ asset('assets/js/libraries/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/libraries/a1a75d5546.js') }}"></script>
     <script src="{{ asset('assets/s/libraries/swiper-bundle.min.js') }}"></script>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+    $(".select2").select2()
     $(document).ready(function(e){
         if($(this).val() == "شهري" || $(this).val() == "يومي" || $(this).val() == "سنوي"){
                 $(".payment-method").css("display","none")
@@ -278,193 +259,8 @@
                     imagesPreview(this, 'div.gallery');
                 });
     })
-        </script>
-
-
-        <script>
-            $("#pac-input").focusin(function() {
-                $(this).val('');
-            });
-
-            $('#latitude').val('');
-            $('#longitude').val('');
-
-            // This example adds a search box to a map, using the Google Place Autocomplete
-            // feature. People can enter geographical searches. The search box will return a
-            // pick list containing a mix of places and predicted search terms.
-            // This example requires the Places library. Include the libraries=places
-            // parameter when you first load the API. For example:
-            // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-            function initAutocomplete() {
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    center: {
-                        lat: 24.740691,
-                        lng: 46.6528521
-                    },
-                    zoom: 13,
-                    mapTypeId: 'roadmap'
-                });
-                // move pin and current location
-                infoWindow = new google.maps.InfoWindow;
-                geocoder = new google.maps.Geocoder();
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        var pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        map.setCenter(pos);
-                        var marker = new google.maps.Marker({
-                            position: new google.maps.LatLng(pos),
-                            map: map,
-                            title: 'موقعك الحالي'
-                        });
-                        markers.push(marker);
-                        marker.addListener('click', function() {
-                            geocodeLatLng(geocoder, map, infoWindow, marker);
-                        });
-                        // to get current position address on load
-                        google.maps.event.trigger(marker, 'click');
-                    }, function() {
-                        handleLocationError(true, infoWindow, map.getCenter());
-                    });
-                } else {
-                    // Browser doesn't support Geolocation
-                    console.log('dsdsdsdsddsd');
-                    handleLocationError(false, infoWindow, map.getCenter());
-                }
-                var geocoder = new google.maps.Geocoder();
-                google.maps.event.addListener(map, 'click', function(event) {
-                    SelectedLatLng = event.latLng;
-                    geocoder.geocode({
-                        'latLng': event.latLng
-                    }, function(results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            if (results[0]) {
-                                deleteMarkers();
-                                addMarkerRunTime(event.latLng);
-                                SelectedLocation = results[0].formatted_address;
-                                console.log(results[0].formatted_address);
-                                splitLatLng(String(event.latLng));
-                                $("#pac-input").val(results[0].formatted_address);
-                            }
-                        }
-                    });
-                });
-
-                function geocodeLatLng(geocoder, map, infowindow, markerCurrent) {
-                    var latlng = {
-                        lat: markerCurrent.position.lat(),
-                        lng: markerCurrent.position.lng()
-                    };
-                    /* $('#branch-latLng').val("("+markerCurrent.position.lat() +","+markerCurrent.position.lng()+")");*/
-                    $('#latitude').val(markerCurrent.position.lat());
-                    $('#longitude').val(markerCurrent.position.lng());
-                    document.getElementById("latitude").value = position.coords.latitude;
-                    document.getElementById("longitude").value = position.coords.longitude;
-                    geocoder.geocode({
-                        'location': latlng
-                    }, function(results, status) {
-                        if (status === 'OK') {
-                            if (results[0]) {
-                                map.setZoom(8);
-                                var marker = new google.maps.Marker({
-                                    position: latlng,
-                                    map: map
-                                });
-                                markers.push(marker);
-                                infowindow.setContent(results[0].formatted_address);
-                                SelectedLocation = results[0].formatted_address;
-                                $("#pac-input").val(results[0].formatted_address);
-                                infowindow.open(map, marker);
-                            } else {
-                                window.alert('No results found');
-                            }
-                        } else {
-                            window.alert('Geocoder failed due to: ' + status);
-                        }
-                    });
-                    SelectedLatLng = (markerCurrent.position.lat(), markerCurrent.position.lng());
-                }
-
-                function addMarkerRunTime(location) {
-                    var marker = new google.maps.Marker({
-                        position: location,
-                        map: map
-                    });
-                    markers.push(marker);
-                }
-
-                function setMapOnAll(map) {
-                    for (var i = 0; i < markers.length; i++) {
-                        markers[i].setMap(map);
-                    }
-                }
-
-                function clearMarkers() {
-                    setMapOnAll(null);
-                }
-
-                function deleteMarkers() {
-                    clearMarkers();
-                    markers = [];
-                }
-                // Create the search box and link it to the UI element.
-                var input = document.getElementById('pac-input');
-                $("#pac-input").val("أبحث هنا ");
-                var searchBox = new google.maps.places.SearchBox(input);
-                map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
-                // Bias the SearchBox results towards current map's viewport.
-                map.addListener('bounds_changed', function() {
-                    searchBox.setBounds(map.getBounds());
-                });
-                var markers = [];
-                // Listen for the event fired when the user selects a prediction and retrieve
-                // more details for that place.
-                searchBox.addListener('places_changed', function() {
-                    var places = searchBox.getPlaces();
-                    if (places.length == 0) {
-                        return;
-                    }
-                    // Clear out the old markers.
-                    markers.forEach(function(marker) {
-                        marker.setMap(null);
-                    });
-                    markers = [];
-                    // For each place, get the icon, name and location.
-                    var bounds = new google.maps.LatLngBounds();
-                    places.forEach(function(place) {
-                        if (!place.geometry) {
-                            console.log("Returned place contains no geometry");
-                            return;
-                        }
-                        var icon = {
-                            url: place.icon,
-                            size: new google.maps.Size(100, 100),
-                            origin: new google.maps.Point(0, 0),
-                            anchor: new google.maps.Point(17, 34),
-                            scaledSize: new google.maps.Size(25, 25)
-                        };
-                        // Create a marker for each place.
-                        markers.push(new google.maps.Marker({
-                            map: map,
-                            icon: icon,
-                            title: place.name,
-                            position: place.geometry.location
-                        }));
-                        $('#latitude').val(place.geometry.location.lat());
-                        $('#longitude').val(place.geometry.location.lng());
-                        if (place.geometry.viewport) {
-                            // Only geocodes have viewport.
-                            bounds.union(place.geometry.viewport);
-                        } else {
-                            bounds.extend(place.geometry.location);
-                        }
-                    });
-                    map.fitBounds(bounds);
-                });
-            }
-        })
+    </script>
+    <script>
         $("#proType_id").on("change",function(){
             $(".direction").css("display","block")
             if($(this).val() == 1){
@@ -505,7 +301,6 @@
                 $('#propertye_id').empty();
             }
         });
-    });
 </script>
-
+</body>
 </html>

@@ -30,7 +30,9 @@ body{
 .blue-color{
   color: var(--blue-color) !important;
 }
-
+.select2-results__option,.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__display{
+  color:#000;
+}
 .blue-background-color{
   background-color: var(--blue-color) !important;
 }

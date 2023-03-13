@@ -28,46 +28,6 @@
         <div class="page-content p-lg-5 p-sm-1">
             <div class="container">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/styeltweb.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
-    <style>
-    </style>
-    <title>إستشارة عقارية</title>
-</head>
-
-<body>
-    @php
-        $control = isset($_GET['control']) ? $_GET['control'] : 'advisors';
-        
-    @endphp
-    @include('layouts.headone')
-    @include('layouts.nav')
-
-    <div class="page-content p-lg-5 p-sm-1">
-        <div class="container">
-
-            <div class="page-content p-lg-5 p-sm-1">
-                <div class="container">
-                    <p class="fs-5">
-                        <strong>أهلا بي حضرتك في i REBC ، اضغط متابعة عشان نكمل :)
-                            : اظهار زر متابعة يدخله ع السؤال الثاني</ strong>
-                            <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">متابعة</a>
-                    </p>
-
-                </div>
-
-            </div>
-
-            @if ($control == 'PurposeOfPurchase')
                 <div class="page-content p-lg-5 p-sm-1">
                     <div class="container">
                         <p class="fs-5">
