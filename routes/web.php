@@ -69,7 +69,7 @@ Route::get('/','index')->name('test');
 Route::get('/test','index')->name('test');
 Route::post('/addenqueris','addenqueris')->name('addenqueris');
 Route::post('/addreport', 'addreport')->name('addreport');
-Route::get('public/detelisscreen/{id}', 'detalisscreen')->name('public/detelisscreen');
+Route::get('/public/detelisscreen/{id}', 'detalisscreen')->name('public/detelisscreen');
 Route::get('/moreproperty/{country}', 'moreproperty')->name('moreproperty');
 Route::get('/aboutpage', 'aboutpage')->name('aboutpage');
 Route::get('/terms', 'terms')->name('terms');
