@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <style>
     </style>
@@ -20,7 +21,7 @@
 
 <body class="bg-white">
     @include('layouts.nav')
-    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+    <div class="text-center py-5 banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
         <h1>المستشار العقاري</h1>
     </div>
     
@@ -29,7 +30,7 @@
             <!-- row -->
                 <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
                     <!--div-->
-                            <div class="page-content p-lg-5 p-sm-4">
+                            <div class="page-content p-4">
 
                                 {{--  <div class="mb-4">
                                     <p class="mg-b-10">عنوان {{ $PurposeOfPurchase }} تحب يكون فين </p>

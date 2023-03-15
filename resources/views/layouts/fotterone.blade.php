@@ -3,15 +3,15 @@
         <div class="container">
             <div class="row footer-top-style">
                 <div class="col-lg-4 mb-lg-0 mb-sm-5">
-                    <img src="assets/img/brand/logo.jpeg" width="250" class="mb-3" alt="">
+                    <img src=" {{ asset('assets/img/brand/logo.jpeg') }}" width="250" class="mb-3" alt="">
                     <p class="fs-5 text-light">ايريبك شركة مصرية تأسست بهدف تقديم خدمات عقارية فى مجالات متعددة تشمل
                         السكني , التجارى والسياحي . كما قامت ايريبك بضم مجموعة من المطورين العقارين ذوي المصداقية لكي
                         تتمكن من عرض أكثر عدد من المشاريع المتميزة التي يمتلكها هؤلاء المطورين تحت سقف واحد.</p>
                     <div class="social-links text-end d-flex">
-                        <a href="#" class="text-light"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="me-2 text-light"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100090842993598&mibextid=ZbWKwL" class="text-light"><i class="fa fa-facebook"></i></a>
+                        <!-- <a href="#" class="me-2 text-light"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="me-2 text-light"><i class="fa fa-google"></i></a>
-                        <a href="#" class="me-2 text-light"><i class="fa fa-pinterest"></i></a>
+                        <a href="#" class="me-2 text-light"><i class="fa fa-pinterest"></i></a> -->
                     </div>
                 </div>
 
@@ -37,10 +37,9 @@
                         <!-- <li class="mb-3 english-font"><img src="assets/img/backgrounds/location-sign-svgrepo-com.svg" class="location ms-2" width="15" height="15" alt=""> دبي مول وبجوار برج خليفة</li> -->
                         <li class="mb-3 english-font"><a href="mailto:info@example.com"
                                 class="text-decoration-none text-light"> <i
-                                    class="fa fa-envelope ms-2"></i>NTS@example.com</a></li>
-                        <li class="mb-3 english-font"><a href="tel:(+123) 596 000"
-                                class="text-decoration-none text-light"> <i class="fa fa-phone ms-2"></i>(+123) 596
-                                000</a></li>
+                                    class="fa fa-envelope ms-2"></i>irebcc@gmail.com</a></li>
+                        <li class="mb-3 english-font"><a href="tel:+20 1158232428" dir="ltr"
+                                class="text-decoration-none text-light"> +20 1158232428 <i class="fa fa-phone ms-2"></i></a></li>
                     </ul>
                 </div>
 

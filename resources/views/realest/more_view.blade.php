@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <style>
@@ -95,7 +96,7 @@
     @include('layouts.nav')
 
 
-    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+    <div class="text-center py-5 banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
         @if (Request::route()->getName() == 'morepropertyCato')
             <h1>{{ $property[0]->catogery->name }}</h1>
         @else

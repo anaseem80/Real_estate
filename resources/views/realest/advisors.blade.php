@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/styeltweb.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
@@ -24,15 +25,15 @@
 
     @endphp
     @include('layouts.nav')
-    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+    <div class="text-center py-5 banner-site banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
         <h1>المستشار العقاري</h1>
     </div>
     
     @if ($control != 'PurposeOfPurchase' && $control != 'investment' && $control != 'residential')
-        <div class="page-content p-lg-5 p-sm-4">
+        <div class="page-content p-4">
             <div class="container">
 
-                <div class="page-content p-lg-5 p-sm-4 text-center">
+                <div class="page-content p-4 text-center">
                     <div class="container">
                         <img src="{{ asset('assets/img/hello.gif') }}" class="d-block img-fluid m-auto" alt="">
                         <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">للبدأ اضغط هنا</a>
@@ -44,7 +45,7 @@
         </div>
     @endif
     @if ($control == 'PurposeOfPurchase')
-        <div class="page-content p-lg-5 p-sm-4 text-center">
+        <div class="page-content p-4 text-center">
             <div class="container">
                 <p class="fs-5">
                     <strong> ايه الغرض من الشراء ؟</strong>
@@ -57,7 +58,7 @@
 
 
     @if ($control == 'investment')
-    <div class="page-content p-lg-5 p-sm-4">
+    <div class="page-content p-4">
             <form action="{{ route('advisors.PurposeOfPurchase') }}"method="get" enctype="multipart/form-data">
                 <!-- row -->
                 <div class="">
@@ -85,7 +86,7 @@
     <div class="">
         <div class="">
             <!--div-->
-                <div class="page-content p-lg-5 p-sm-4">
+                <div class="page-content p-4">
                     <div class="mb-4">
                         <p class="mg-b-10">تحب نوع السكن ايه؟</p>
                         <select name="cate" class="form-control SlectBox">

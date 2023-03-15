@@ -10,6 +10,7 @@
     <link href="{{ URL::asset('assets/plugins/prism/prism.css') }}" rel="stylesheet">
     <!---Internal Owl Carousel css-->
     <link href="{{ URL::asset('assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <!---Internal  Multislider css-->
     <link href="{{ URL::asset('assets/plugins/multislider/multislider.css') }}" rel="stylesheet">
     <!--- Select2 css -->

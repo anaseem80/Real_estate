@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
+        <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
         <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
         <style>
             swiper-container {
@@ -90,7 +91,7 @@
     <body class="bg-white">
         @include('layouts.nav')
     
-    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+    <div class="text-center py-5 banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
        <h1 class="text-white">{{$property->name}}</h1>
     </div>
         @if ($errors->any())
@@ -182,7 +183,7 @@
                         </ul>                        
                         <div class="real-estate-description">
                             <h3 class="mt-5 text-dark">الوصف</h3>
-                            <p>{{$property->name}} </p>
+                            <p>{{$property->property_details->description}} </p>
                         </div>
                         <div class="real-estate-description">
                             <h3 class="mt-5 text-dark">التفاصيل</h3>

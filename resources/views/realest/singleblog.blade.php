@@ -1,3 +1,5 @@
+@extends('layouts.master2')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +10,11 @@
     -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Roxy by GetTemplates.co</title>
+    <title>{{$blogs->title}}</title>
     <meta name="description" content="Roxy">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <!-- External CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/select2/select2.min.css') }}">
@@ -19,117 +22,59 @@
     <link rel="stylesheet" href="{{ asset('vendor/lightcase/lightcase.css') }}">
      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+     <link rel="stylesheet" href="{{ asset('assets/css-rtl/styeltweb.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
+    <link href="{{URL::asset('assets/plugins/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+	<!---Ionicons css-->
+	<link href="{{URL::asset('assets/plugins/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+	<!---Internal Typicons css-->
+	<link href="{{URL::asset('assets/plugins/typicons.font/typicons.css')}}" rel="stylesheet">
+	<!---Internal Feather css-->
+	<link href="{{URL::asset('assets/plugins/feather/feather.css')}}" rel="stylesheet">
+	<!---Internal Falg-icons css-->
+	<link href="{{URL::asset('assets/plugins/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
+
+     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/styelblog.css') }}">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
 </head>
-<body data-spy="scroll" data-target="#navbar" class="static-layout">
-	<div id="side-nav" class="sidenav">
-	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
-	
-	<div class="sidenav-content">
-		<p>
-			Kuncen WB1, Wirobrajan 10010, DIY
-		</p>
-		<p>
-			<span class="fs-16 primary-color">(+68) 120034509</span>
-		</p>
-		<p>info@yourdomain.com</p>
-	</div>
-</div>	<div id="side-search" class="sidenav">
-	<a href="javascript:void(0)" id="side-search-close">&times;</a>
-	<div class="sidenav-content">
-		<form action="">
+<body data-spy="scroll" data-target="#navbar" class="static-layout" dir="rtl">
+@include('layouts.nav')
+<div class="text-center py-5 banner-site banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+        <h1>{{$blogs->title}}</h1>
+</div>
 
-			<div class="input-group md-form form-sm form-2 pl-0">
-			  <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-			  <div class="input-group-append">
-			    <button class="input-group-text red lighten-3" id="basic-text1">
-			    	<span class="lnr lnr-magnifier"></span>
-			    </button>
-			  </div>
-			</div>
-
-		</form>
-	</div>
-	
-</div>	
-<div id="side-nav" class="sidenav">
-	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
-	
-	<div class="sidenav-content">
-		<p>
-			Kuncen WB1, Wirobrajan 10010, DIY
-		</p>
-		<p>
-			<span class="fs-16 primary-color">(+68) 120034509</span>
-		</p>
-		<p>info@yourdomain.com</p>
-	</div>
-</div><div id="side-search" class="sidenav">
-	<a href="javascript:void(0)" id="side-search-close">&times;</a>
-	<div class="sidenav-content">
-		<form action="">
-
-			<div class="input-group md-form form-sm form-2 pl-0">
-			  <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-			  <div class="input-group-append">
-			    <button class="input-group-text red lighten-3" id="basic-text1">
-			    	<span class="lnr lnr-magnifier"></span>
-			    </button>
-			  </div>
-			</div>
-
-		</form>
-	</div>
-	
-</div>	<div class="jumbotron jumbotron-single d-flex align-items-center" style="background-image: url(/{{$blogs->image}})">
-  <div class="container text-center">
-    <h1 class="display-2 mb-4">Single Blog</h1>
-  </div>
-</div>	<!-- Contact Form Section -->
-<section id="single-content" class="bg-white">
+<section id="blog" class="bg-grey my-5">
     <div class="container">
-        <div class="section-content blog-content">
-            
+        <div class="section-content">
             <div class="row">
-                <!-- Single Content Holder -->
-                <div class="col-md-8 offset-md-2 mt-4">
-                    <h4>{{$blogs->title}}</h4>
-                    <img class="float-left" width="320px" src="/{{$blogs->image}}" alt="">
-                    <p>{{$blogs->content}}</p>
-                    {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste harum, ut magni cupiditate. Nihil ipsum debitis voluptates voluptate illum consectetur sapiente dolorem facilis, eum nobis sequi eveniet assumenda vel voluptatem!</p>
-                    <p>Consectetur adipisicing elit. Sint, corrupti deleniti, rem mollitia quam cum quo, animi ipsa praesentium officiis ducimus! Modi aperiam, nulla ipsum, totam natus consequuntur fugiat blanditiis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste harum, ut magni cupiditate. Nihil ipsum debitis voluptates voluptate illum consectetur sapiente dolorem facilis, eum nobis sequi eveniet assumenda vel voluptatem!</p>
-                </div> --}}
-                <!-- End of Contact Form Holder -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End of Contact Form Section -->	<!-- Features Section-->
-<section id="cta" class="bg-fixed overlay" style="background-image: url(img/bg.jpg);">
-    <div class="container">
-        <div class="section-content" data-aos="fade-up">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="mb-2"></h2>
-                    <p></p>
-                   
+                <!-- Blog -->
+                <div class="col-md-12 blog-holder">
+                    <div class="row">
+                    <div class="mt-4">
+                    <img src="{{ asset($blogs->image) }}" class="w-100 img-fluid" alt="">
+                    <p class="mt-5">{{$blogs->content}}</p>
+                    </div> 
+                    </div>
                 </div>
+                <!-- End of Blog -->
             </div>
         </div>
     </div>
 </section>
-
+<!-- End of Features Section--></div>
+@include('layouts.fotterone')
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script src="{{ asset('vendor/bootstrap/bootstrap.min.css') }}"></script>
     <script src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
@@ -146,3 +91,4 @@
 	<script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
+

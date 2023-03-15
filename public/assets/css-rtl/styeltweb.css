@@ -7,8 +7,9 @@
 }
 .navbar{
   background-color: #fff;
+  transition: 0.3s all;
 }
-footer{
+footer,.add-real-estate{
   background-color: #33216b;
 }
 /*#*/
@@ -16,6 +17,9 @@ body{
   font-family: "DroidArabicKufiRegular" !important;
   color: var(--white-color) !important;
   background-color:#fdfdfd !important;
+}
+.banner-site{
+  margin-top: 100px;
 }
 .swiper-button-prev,.swiper-button-next{
   background: var(--white-color) !important;

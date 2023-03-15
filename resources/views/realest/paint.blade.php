@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <style>
@@ -22,7 +23,13 @@
         @include('layouts.nav')
         @section('content')
 
-        @if ($errors->any())
+
+        <div class="text-center py-5 banner-site banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+            <h1>خدمة التشطيب</h1>
+        </div>
+        <div class="page-content my-5">
+            <div class="container">
+            @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -69,13 +76,6 @@
                 </button>
             </div>
         @endif
-        <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
-            <h1>خدمة التشطيب</h1>
-        </div>
-        <div class="page-content my-5">
-            <div class="container">
-                <div class="container">
-                </div>
                 <form action="{{ route('paint.store') }}"method="post" enctype="multipart/form-data">
                     @csrf
                     @if ($id)
@@ -84,7 +84,6 @@
                         <select name="catogerie_id" class="form-control SlectBox"
                             onclick="console.log($(this).val())" onchange="console.log('change is firing')">
                             <!--placeholder-->
-                            <option title="Volvo is a car" value="منزل">اختار نوع العقار</option>
                             @foreach ($catogery as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
                             @endforeach
@@ -94,14 +93,14 @@
                         <div class="form-group">
                             <div class="mb-4">
                                 <p class="mg-b-10">مساحة العقار</p>
-                                <input class="form-control" placeholder="أكتب مساحة العقار" type="text" name="space">
+                                <input class="form-control" placeholder="أكتب مساحة العقار" type="text" required name="space">
                             </div>
                         </div>
                         @else
                         <div class="form-group">
                             <div class="mb-4">
                                 <p class="mg-b-10">أسم المستخدم</p>
-                                <input class="form-control" placeholder="أكتب أسم المستخدم" type="text" name="name">
+                                <input class="form-control" placeholder="أكتب أسم المستخدم" type="text" required name="name">
                             </div>
                         </div>
                         <div class="mb-4">
@@ -119,13 +118,13 @@
                         <div class="form-group">
                             <div class="mb-4">
                                 <p class="mg-b-10">مساحة العقار</p>
-                                <input class="form-control" placeholder="أكتب مساحة العقار" type="text" name="space">
+                                <input class="form-control" placeholder="أكتب مساحة العقار" type="text" required name="space">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="mb-4">
                                 <p class="mg-b-10">رقم الهاتف</p>
-                            <input class="form-control" placeholder="أكتب رقم الهاتف" type="text" name="phone">
+                            <input class="form-control" placeholder="أكتب رقم الهاتف" type="text" required name="phone">
                             </div>
                         </div>
                     @endif

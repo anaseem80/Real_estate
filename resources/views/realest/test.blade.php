@@ -8,22 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
-    <style>
-        header {
-            background-image: url(assets/img/backgrounds/1.jpg);
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center center;
-            height: 100vh;
-            background-attachment: fixed;
-            display: grid;
-            place-content: center;
-        }
-
-        body {
-            background-color: #000000;
-        }
-    </style>
+    <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/styeltweb.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
@@ -41,36 +26,11 @@
 	<link href="{{URL::asset('assets/plugins/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
 
     <title>الصفحه الرئيسيه</title>
-    <link rel="icon" href="logoapp (1).png">
 </head>
 
 <body class="bg-white">
-
     @include('layouts.nav')
-
-    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{{ asset('assets/img/backgrounds/1.jpg') }}" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('assets/img/backgrounds/blog-1.jpg')}}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('assets/img/backgrounds/blog-2.jpg')}}" alt="Third slide">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
-
-    <div class="3kares-most-visited  mt-5">
+    <div class="3kares-most-visited" style="margin-top:100px">
         <div class="container">
             <div class="title d-flex flex-wrap justify-content-between align-items-center">
                 <div>
@@ -81,9 +41,6 @@
 
             </div>
             <div class="owl-carousel py-5 owl-theme">
-
-
-
 
 
                 @foreach ($propertiesviews as $item)
