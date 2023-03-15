@@ -1,3 +1,4 @@
+@extends('layouts.master2')
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -17,20 +18,18 @@
     <title>إستشارة عقارية</title>
 </head>
 
-<body>
-
-    @include('layouts.headone')
+<body class="bg-white">
     @include('layouts.nav')
-    <div class="form-check">
-        <form action="{{ route('advisors.search') }}"method="get" enctype="multipart/form-data">
+    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+        <h1>المستشار العقاري</h1>
+    </div>
+    
 
+        <form action="{{ route('advisors.search') }}"method="get" enctype="multipart/form-data">
             <!-- row -->
-            <div class="row">
                 <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
                     <!--div-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row row-sm">
+                            <div class="page-content p-lg-5 p-sm-1">
 
                                 {{--  <div class="mb-4">
                                     <p class="mg-b-10">عنوان {{ $PurposeOfPurchase }} تحب يكون فين </p>
@@ -39,21 +38,21 @@
                                             placeholder="مساحة {{ $PurposeOfPurchase }}" type="text" name="space">
                                     </div>
                                 </div>  --}}
-                                <div class="col-lg-4 mb-3 mb-lg-0">
+                                <div class="mb-3 mb-lg-0">
                                     <label for="rent type">قسط/كاش</label>
-                                    <select class="form-control ms-2 rounded-0 p-3" id="contract" name="payment_method">
-                                        <option selected>عايز تدفع بالقسط ولا كاش</option>
+                                    <select class="form-control w-100 rounded-0" id="contract" name="payment_method">
+                                        <option selected disabled>عايز تدفع بالقسط ولا كاش</option>
                                         <option value="قسط">قسط</option>
                                         <option value="كاش">كاش</option>
                                     </select>
                                 </div>
-
                                 <input type="submit" value="إرسال"
                                     class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
-
+                            </div>
+                </div>
         </form>
 
-
+        @include('layouts.fotterone')
         <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
         <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>

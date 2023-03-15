@@ -1,3 +1,4 @@
+@extends('layouts.master2')
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -17,63 +18,52 @@
     <title>إستشارة عقارية</title>
 </head>
 
-<body>
+<body class="bg-white">
     @php
         $control = isset($_GET['control']) ? $_GET['control'] : 'advisors';
 
     @endphp
-    @include('layouts.headone')
     @include('layouts.nav')
+    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+        <h1>المستشار العقاري</h1>
+    </div>
+    
     @if ($control != 'PurposeOfPurchase' && $control != 'investment' && $control != 'residential')
         <div class="page-content p-lg-5 p-sm-1">
             <div class="container">
 
-                <div class="page-content p-lg-5 p-sm-1">
+                <div class="page-content p-lg-5 p-sm-1 text-center">
                     <div class="container">
-                        <p class="fs-5">
-                            <strong>أهلا بي حضرتك في i REBC ، اضغط متابعة عشان نكمل :)
-                                </ strong>
-                                <a href="{{ url('advisors?control=PurposeOfPurchase') }}"
-                                    class="btn btn-info">متابعة</a>
-                        </p>
+                        <img src="{{ asset('assets/img/hello.gif') }}" class="d-block img-fluid m-auto" alt="">
+                        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">للبدأ اضغط هنا</a>
 
                     </div>
 
                 </div>
+            </div>
+        </div>
     @endif
     @if ($control == 'PurposeOfPurchase')
-        <div class="page-content p-lg-5 p-sm-1">
+        <div class="page-content p-lg-5 p-sm-1 text-center">
             <div class="container">
                 <p class="fs-5">
-                    <strong> ايه الغرض من الشراء ؟
-
+                    <strong> ايه الغرض من الشراء ؟</strong>
                 </p>
-
-
-                <div class="form-check">
-                    <a href="advisors?control=investment" class="btn btn-primary">إستثمار</a>
-                </div>
-                <div class="form-check">
-                    <a href="advisors?control=residential" class="btn btn-primary">سكني</a>
-                </div>
+                <a href="advisors?control=investment" class="btn btn-primary rounded-0">إستثمار</a>
+                <a href="advisors?control=residential" class="btn btn-primary rounded-0">سكني</a>
             </div>
-
         </div>
     @endif
 
 
     @if ($control == 'investment')
-        <div class="form-check">
+    <div class="page-content p-lg-5 p-sm-1">
             <form action="{{ route('advisors.PurposeOfPurchase') }}"method="get" enctype="multipart/form-data">
-
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
                         <!--div-->
-                        <div class="card">
-                            <div class="card-body">
                                 <div class="row row-sm">
-
                                     <div class="mb-4">
                                         <p class="mg-b-10">تحب نوع الإستثمار ايه؟</p>
                                         <select name="cate" class="form-control SlectBox">
@@ -84,36 +74,37 @@
                                 </div>
                                 <input type="submit" value="التالي"
                                     class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
-
+                    </div>
+                </div>
             </form>
+    </div>
     @endif
   @if($control == 'residential')
   <form action="{{ route('advisors.PurposeOfPurchase') }}"method="get" enctype="multipart/form-data">
-
     <!-- row -->
     <div class="row">
         <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
             <!--div-->
-            <div class="card">
-                <div class="card-body">
-                    <div class="row row-sm">
+                <div class="page-content p-lg-5 p-sm-1">
+                    <div class="mb-4">
+                        <p class="mg-b-10">تحب نوع السكن ايه؟</p>
+                        <select name="cate" class="form-control SlectBox">
+                            <option value="منزل">منزل </option>
+                            <option value="فندق">فندق</option>
+                            <option value="شاليه">شاليه </option>
+                            <option value="فيلا">فيلا</option>
 
-                        <div class="mb-4">
-                            <p class="mg-b-10">تحب نوع السكن ايه؟</p>
-                            <select name="cate" class="form-control SlectBox">
-                                <option value="منزل">منزل </option>
-                                <option value="فندق">فندق</option>
-                                <option value="شاليه">شاليه </option>
-                                <option value="فيلا">فيلا</option>
-
-                            </select>
-                        </div>
+                        </select>
                     </div>
                     <input type="submit" value="التالي"
-                        class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
+                    class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
 
-</form>
+                </div>
+        </div>
+    </div>
+  </form>
   @endif
+  @include('layouts.fotterone')
     <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>

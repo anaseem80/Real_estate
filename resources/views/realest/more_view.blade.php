@@ -1,3 +1,5 @@
+@extends('layouts.master2')
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -88,22 +90,25 @@
     <title>عقارك</title>
 </head>
 
-<body>
+<body class="bg-white">
 
     @include('layouts.nav')
 
 
+    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+        @if (Request::route()->getName() == 'morepropertyCato')
+            <h1>{{ $property[0]->catogery->name }}</h1>
+        @else
+            <h1>{{ $property[0]->country }}</h1>
+        @endif
+    </div>
 
     <div class="page-content p-lg-5 p-sm-1 mt-5">
         <div class="container mt-5">
             <div class="3kares-most-visited p-sm-2 p-1 mb-4">
                 <div class="container">
                     <div class="row">
-                        @if (Request::route()->getName() == 'morepropertyCato')
-                            <h4 class="alert alert-info">{{ $property[0]->catogery->name }}</h4>
-                        @else
-                            <h1 class="alert alert-info">{{ $property[0]->country }}</h1>
-                        @endif
+
 
 
 

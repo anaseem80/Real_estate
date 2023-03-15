@@ -1,3 +1,5 @@
+@extends('layouts.master2')
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -13,14 +15,16 @@
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
     <!--- Internal Select2 css-->
+    <link href="{{ URL::asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
+    <!---Internal Fancy uploader css-->
+    <link href="{{ URL::asset('assets/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <title>اضافة عقار</title>
 </head>
 
-<body>
+<body class="bg-white">
     @include('layouts.nav')
-    <h1>_ </h1>
-    <h1> _</h1>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -59,7 +63,9 @@
             </button>
         </div>
     @endif
-
+    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+        <h1>إضافة عقار</h1>
+    </div>
     <div class="page-content p-lg-5 p-sm-1">
         <div class="container">
             <form action="{{ route('property.store') }}"method="POST" enctype="multipart/form-data">
@@ -67,7 +73,7 @@
                 <div class="form-group mb-3 row">
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">اختر العقار</label>
-                        <select name="proType_id" id="proType_id" class="form-control rounded-0 p-3">
+                        <select name="proType_id" id="proType_id" class="form-control rounded-0 ">
                         <option selected disabled>رجاء الأختيار</option>
                         @foreach ($proprtietypes as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
@@ -76,29 +82,29 @@
                     </div>
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">نوع العقار</label>
-                        <select class="form-control rounded-0 p-3" id="propertye_id" name="catogerie_id">
+                        <select class="form-control rounded-0 " id="propertye_id" name="catogerie_id">
                         <option selected disabled>رجاء الأختيار</option>
                      </select>
                     </div>
                     <div class="form-group mb-3">
                         <label for="name">اسم العقار</label>
                         <input type="text" autocomplete="off" id="name" name="name"
-                            class="form-control ms-2 rounded-0 p-3" placeholder="اسم العقار" required>
+                            class="form-control ms-2 rounded-0 " placeholder="اسم العقار" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="town">اسم المدينة</label>
                         <input type="text" autocomplete="off" id="town" name="country"
-                            class="form-control ms-2 rounded-0 p-3" placeholder="اسم المدينة" required>
+                            class="form-control ms-2 rounded-0 " placeholder="اسم المدينة" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="size">مساحة العقار</label>
                         <input type="number" autocomplete="off" id="size" name="space"
-                            class="form-control ms-2 rounded-0 p-3" placeholder="مساحة العقار" required>
+                            class="form-control ms-2 rounded-0 " placeholder="مساحة العقار" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="price">السعر لكل متر</label>
                         <input type="number" autocomplete="off" id="price" name="price"
-                            class="form-control ms-2 rounded-0 p-3" placeholder="السعر لكل متر" required>
+                            class="form-control ms-2 rounded-0 " placeholder="السعر لكل متر" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="description">الوصف</label>
@@ -108,7 +114,7 @@
 
                     <div class="col-lg-6 mb-3 mb-lg-0">
                         <label for="rent type">بيع/ايجار</label>
-                        <select class="form-control rounded-0 p-3 rent" id="rent type" name="Rental_term">
+                        <select class="form-control rounded-0  rent" id="rent type" name="Rental_term">
                         <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="سنوي">سنوي</option>
                             <option value="شهري">شهري</option>
@@ -120,7 +126,7 @@
 
                     <div class="col-lg-6 mb-3 mb-lg-0 direction" style="display:none">
                         <label for="direction">مكان السكن </label>
-                        <select class="form-control rounded-0 p-3" id="direction" name="property_direction">
+                        <select class="form-control rounded-0 " id="direction" name="property_direction">
                         <option selected disabled>رجاء الأختيار</option>
                         </select>
                     </div>
@@ -128,7 +134,7 @@
                 <div class="form-group mb-3 row">
                     <div style="display: none" id="numbeer_room" class="col-lg-6 mb-3 mb-lg-0">
                         <label for="type">تحديد عدد الغرف</label>
-                        <select  class="form-control rounded-0 p-3" id="type" name="numbeer_room">
+                        <select  class="form-control rounded-0 " id="type" name="numbeer_room">
                         <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="1">1</option>
                             <option value="2">2</option>
@@ -145,7 +151,7 @@
 
                     <div class="col-lg-6 mb-3 mb-lg-0" id="numbeer_toilet" style="display: none">
                         <label for="rent type">تحديد عدد الحمامات</label>
-                        <select  class="form-control rounded-0 p-3" id="rent type" name="numbeer_toilet">
+                        <select  class="form-control rounded-0 " id="rent type" name="numbeer_toilet">
                             <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="1">1</option>
                             <option value="2">2</option>
@@ -161,7 +167,7 @@
                     </div>
                     <div class="col-lg-12 mb-3 mb-lg-0 payment-method" style="display:none">
                         <label for="rent type">طريقة الدفع</label>
-                        <select class="form-control rounded-0 p-3" id="rent type" name="payment_method">
+                        <select class="form-control rounded-0 " id="rent type" name="payment_method">
                             <option selected disabled>رجاء الأختيار</option>
                             <option value="قسط">قسط</option>
                             <option value="كاش">كاش</option>
@@ -169,13 +175,13 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="rent type">السعر الكلي</label>
-                        <input type="text" name="pay" class="form-control ms-2 rounded-0 p-3"
+                        <input type="text" name="pay" class="form-control ms-2 rounded-0 "
                             placeholder="البادجت/المزانية">
                         <div class="mb-4">
                             <p class="mg-b-10">مميزات العقار</p>
                             <select name="future[]" multiple="multiple" class="form-control select2">
-                                <option selected disabled>رجاء الأختيار</option>
-                                <option selected value="سطح خاص">سطح خاص</option>
+                                <option disabled>رجاء الأختيار</option>
+                                <option value="سطح خاص">سطح خاص</option>
                                 <option value="مدخل سيارة">مدخل سيارة</option>
                                 <option value="مكيفات">مكيفات</option>
                                 <option value="مدخل خاص ">مدخل خاص </option>
@@ -190,14 +196,20 @@
 
                     <div class="form-group mb-3">
                         <label for="file">ارفق ملفك الان</label>
-                        <input name="images[]" type="file" id="file"
-                            class="form-control ms-2 rounded-0 p-3 english-font" placeholder="ادخل رقم الهاتف"
-                            multiple id="gallery-photo-add" enctype="multipart/form-data" multiple required>
+                        <div class="row mb-4">
+                            <div class="col-sm-12 col-md-4">
+                                <input name="images[]" type="file" class="dropify" data-height="200"
+                                    multiple id="gallery-photo-add" enctype="multipart/form-data"
+                                    multiple>
+                            </div>
+                            <div class="gallery"></div>
+
+                        </div>                    
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label for="projectinput1"> العنوان</label>
-                            <input autocomplete="off"type="text" id="pac-input" class="form-control ms-2 rounded-0 p-3"
+                            <input autocomplete="off"type="text" id="pac-input" class="form-control ms-2 rounded-0 "
                                 placeholder="العنوان" name="address">
 
                             {{-- @error('address')
@@ -229,6 +241,17 @@
     <script src="{{ asset('assets/js/libraries/a1a75d5546.js') }}"></script>
     <script src="{{ asset('assets/s/libraries/swiper-bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <!--Internal Fileuploads js-->
+        <script src="{{ URL::asset('assets/plugins/fileuploads/js/fileupload.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/fileuploads/js/file-upload.js') }}"></script>
+    <!--Internal Fancy uploader js-->
+    <script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.ui.widget.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.fileupload.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.iframe-transport.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.fancy-fileupload.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/fancyuploder/fancy-uploader.js') }}"></script>
+    <!--Internal  Form-elements js-->
+
     <script>
     $(".select2").select2()
     $(document).ready(function(e){
@@ -237,27 +260,6 @@
         }else{
             $(".payment-method").css("display","block")
         }
-        var imagesPreview = function(input, placeToInsertImagePreview) {
-                    if (input.files) {
-                        var filesAmount = input.files.length;
-
-                        for (i = 0; i < filesAmount; i++) {
-                            var reader = new FileReader();
-
-                            reader.onload = function(event) {
-                                $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(
-                                    placeToInsertImagePreview);
-                            }
-                            console.log("Selected picture name: 111");
-                            reader.readAsDataURL(input.files[i]);
-                        }
-                    }
-
-                };
-                console.log("Selected picture name: 222");
-                $('#gallery-photo-add').on('change', function() {
-                    imagesPreview(this, 'div.gallery');
-                });
     })
     </script>
     <script>

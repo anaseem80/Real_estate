@@ -1,3 +1,5 @@
+@extends('layouts.master2')
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -17,12 +19,11 @@
     <title>إستشارة عقارية</title>
 </head>
 
-<body>
+<body class="bg-white">
     @php
         $control = isset($_GET['control']) ? $_GET['control'] : 'advisors';
         
     @endphp
-    @include('layouts.headone')
     @include('layouts.nav')
 
     <div class="page-content p-lg-5 p-sm-1">
@@ -89,10 +90,14 @@
                         </div>
                     @endforeach
                 @else
-                    <h4 class="alert alert-danger">لا يوجد بيانات مطابقة للبيانات التي أدخلتها
+                <div class="text-center">
+                    <img src="{{ asset('assets/img/walking-man.gif') }}"/>
+                    <h4 class="text-dark my-3">لا يوجد بيانات مطابقة للبيانات التي أدخلتها
                         تواصل مع فريق الدعم
-                        <a href="http://wa.me/+201158232428" class="btn btn-success">WhatsApp</a>
                     </h4>
+                    <a href="http://wa.me/+201158232428" class="btn btn-success">WhatsApp</a>
+
+                </div>
             @endif
         </div>
     </div>
@@ -103,6 +108,7 @@
         type="text" name="space">
     <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $address }}"
         type="text" name="address">
+    @include('layouts.fotterone')
     <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>

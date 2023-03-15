@@ -1,3 +1,6 @@
+
+@extends('layouts.master2')
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -17,31 +20,28 @@
     <title>إستشارة عقارية</title>
 </head>
 
-<body>
+<body class="bg-white">
+        @include('layouts.nav')
+        <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+            <h1>المستشار العقاري</h1>
+        </div>
+    
 
-    @include('layouts.headone')
-    @include('layouts.nav')
-    <div class="form-check">
         <form action="{{ route('advisors.contract') }}"method="get" enctype="multipart/form-data">
-
-            <!-- row -->
-            <div class="row">
                 <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
                     <!--div-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row row-sm">
+                            <div class="page-content p-lg-5 p-sm-1">
 
                                 {{--  <div class="mb-4">
                                     <p class="mg-b-10">عنوان {{ $PurposeOfPurchase }} تحب يكون فين </p>
-                                    <div class="col-lg">
+                                    <div>
                                         <input class="form-control" autocomplete="off"
                                             placeholder="مساحة {{ $PurposeOfPurchase }}" type="text" name="space">
                                     </div>
                                 </div>  --}}
-                                <div class="col-lg-4 mb-3 mb-lg-0">
+                                <div class="">
                                     <label for="rent type">عنوان {{ $PurposeOfPurchase }} </label>
-                                    <select class="form-control ms-2 rounded-0 p-3"  id="address" name="address">
+                                    <select class="form-control ms-2 rounded-0 w-100"  id="address" name="address">
                                         <option selected>اختر عنوان {{ $PurposeOfPurchase }}</option>
                                         <option value="التجمع الخامس">التجمع الخامس</option>
                                         <option value="التجمع الأول">التحمع الأول</option>
@@ -51,17 +51,18 @@
                                         <option value="6">أخر</option>
                                     </select>
                                 </div>
-                                <input type="text" class="form-control ms-2 rounded-0 p-3" style="display: none" name="address" id="addressInput" placeholder="أكتب العنوان الي تحبو حضرتك">
-                            </div>
-                            <input class="form-control" autocomplete="off"
+                                <input type="text" class="form-control ms-2 rounded-0 p-3 mt-3" style="display: none" name="address" id="addressInput" placeholder="أكتب العنوان الي تحبو حضرتك">
+                                <input class="form-control mt-3" autocomplete="off"
                                             placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="cate">
-                                            <input class="form-control" autocomplete="off"
+                                            <input class="form-control mt-3" autocomplete="off"
                                             placeholder="مساحة " hidden value="{{ $space }}" type="text" name="space">
                             <input type="submit" value="التالي"
                                 class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
 
+                            </div>
+                </div>
         </form>
-
+        @include('layouts.fotterone')
 
         <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
         <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>
@@ -76,24 +77,22 @@
         <script src="{{ asset('assets/js/app.js') }}"></script>
         <script src="{{ asset('assets/js/libraries/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/libraries/a1a75d5546.js') }}"></script>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-    $(document).ready(function(e) {
-
-        $('#address').change(function() {
-            var id = $(this).val()
-            console.log(id)
-            if($(this).val() == '6')
-            {
-                $("#addressInput").css("display","block")
-            } 
-            else
-            {
-                $("#addressInput").css("display","none")
-            }
-        });
-    });
-</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(e) {
+                $('#address').change(function() {
+                    var id = $(this).val()
+                    console.log(id)
+                    if($(this).val() == '6')
+                    {
+                        $("#addressInput").css("display","block")
+                    } 
+                    else
+                    {
+                        $("#addressInput").css("display","none")
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>

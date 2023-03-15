@@ -3,10 +3,15 @@
   --blue-color:#274abb;
   --white-color:#fff;
   --black-color:#484848;
+  --site-color:#33216b;
 }
-.navbar,footer{
+.navbar{
+  background-color: #fff;
+}
+footer{
   background-color: #33216b;
 }
+/*#*/
 body{
   font-family: "DroidArabicKufiRegular" !important;
   color: var(--white-color) !important;
@@ -30,7 +35,7 @@ body{
 .blue-color{
   color: var(--blue-color) !important;
 }
-.select2-results__option,.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__display{
+.select2-results__option,.select2-container--default[dir="rtl"] {
   color:#000;
 }
 .blue-background-color{
@@ -69,11 +74,14 @@ body{
   animation: Icons 0.1s;
 }
 .nav-link:hover{
-  background-color: var(--blue-color) !important;
+  background-color: var(--site-color) !important;
   color: #fff !important;
 }
 .title h1{
   color: #000;
+}
+.select2{
+  width: 100% !important;
 }
 p{
   color:#000;
@@ -139,7 +147,7 @@ label{
   line-height: 1.5 !important;
 }
 .box,.why-choose-card,.card{
-  background-color:#f9f9f9 !important;
+  /* background-color:#f9f9f9 !important; */
 }
 /* Checkbox */
 input[type="checkbox"] {
@@ -182,8 +190,8 @@ input:checked[type="checkbox"]::after {
 /* Card */
 .card{
   transition: 0.3s;
-  padding: 5px;
-  border: 1px solid #ebebeb !important;
+  padding: 0;
+  border: 0 !important;
 }
 .card:hover{
   box-shadow: 0 .5rem 5rem rgba(0,0,0,.15)!important;
@@ -244,17 +252,41 @@ button{
 .owl-nav button{
   font-size: 50px !important;
 }
-
+.owl-nav{
+  position: absolute;
+  top: -140px;
+  left: 27px;
+}
+.owl-carousel .owl-item .item .card{
+  transition: 0.3s;
+}
+.owl-carousel .owl-item .item .card:hover{
+  box-shadow: 0 0 0 15px #00000015 !important;
+}
+@media(max-width:992px){
+  .owl-nav{
+    top: -20px;
+  }
+  .owl-carousel-img .owl-item{
+    height:350px !important;
+  }
+  .owl-carousel-img .owl-item img{
+    height: 100%;
+  }
+  .owl-carousel-img .item{
+    height: 100%;
+  }
+}
 .owl-carousel .owl-nav button.owl-prev span{
   position: absolute;
   top: 50%;
-  right: -25px;
+  right: -90px;
   background: #33216b;
-  height: 33px;
+  height: 50px;
   text-align: center;
-  line-height: 21px;
+  line-height: 38px;
   border-radius: 50%;
-  width: 32px;
+  width: 50px;
   color: #fff;
 } 
 .owl-carousel .owl-nav button.owl-next span{
@@ -262,11 +294,11 @@ button{
   top: 50%;
   left: -25px;
   background: #33216b;
-  height: 33px;
+  height: 50px;
   text-align: center;
-  line-height: 21px;
+  line-height: 38px;
   border-radius: 50%;
-  width: 32px;
+  width: 50px;
   color: #fff;
 } 
 .properti_city .overlay {

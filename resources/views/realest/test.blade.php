@@ -1,11 +1,4 @@
-@section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/styeltweb.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
-@endsection
+@extends('layouts.master2')
 
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -37,11 +30,21 @@
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css-rtl/libraries/bootstrap.min.css') }}">
+    <link href="{{URL::asset('assets/plugins/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+	<!---Ionicons css-->
+	<link href="{{URL::asset('assets/plugins/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+	<!---Internal Typicons css-->
+	<link href="{{URL::asset('assets/plugins/typicons.font/typicons.css')}}" rel="stylesheet">
+	<!---Internal Feather css-->
+	<link href="{{URL::asset('assets/plugins/feather/feather.css')}}" rel="stylesheet">
+	<!---Internal Falg-icons css-->
+	<link href="{{URL::asset('assets/plugins/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
+
     <title>الصفحه الرئيسيه</title>
     <link rel="icon" href="logoapp (1).png">
 </head>
 
-<body>
+<body class="bg-white">
 
     @include('layouts.nav')
 
@@ -67,7 +70,7 @@
   </button>
 </div> -->
 
-    <div class="3kares-most-visited p-sm-5 p-1 mt-5">
+    <div class="3kares-most-visited  mt-5">
         <div class="container">
             <div class="title d-flex flex-wrap justify-content-between align-items-center">
                 <div>
@@ -133,7 +136,7 @@
         </div>
     </div>
 
-    <div class="3kares-most-visited p-sm-5 p-1">
+    <div class="3kares-most-visited ">
         <div class="container">
             <div class="title d-flex flex-wrap justify-content-between align-items-center">
                 <div>
@@ -193,8 +196,43 @@
                     </div>
                 @endforeach
             </div>
+            <div class="3kares-most-visited A3kar-type ">
+                <div class="container">
+                    <div class="title d-flex flex-wrap justify-content-between align-items-center">
+                        <div>
+                            <h1 class="mt-5 mb-4">نوع العقار</h1>
+                            <span class="heading-divider"></span>
+                            <p class="mb-5 fs-5">تصفح احدث عقارات اليوم.</p>
+                        </div>
 
-            <div class="3kares-most-visited p-sm-5 p-1">
+                    </div>
+                    <div class="row">
+
+
+                        @foreach ($catogerys as $item)
+                            <div class="col-lg-3 my-2">
+                                <div class="properti_city position-relative">
+                                    <a href="morepropertyCato/{{ $item->id }}">
+                                        <div class="thumb"><img class="img-fluid w-100"
+                                                src="{{ $item->image_path }}" alt="pc1.jpg"></div>
+                                        <div class="overlay">
+                                            <div class="details text-light">
+                                                <h4>{{ $item->name }}</h4>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -263,7 +301,7 @@
                     </div>
                 </div>
             </div>
-            <div class="3kares-most-visited p-sm-5 p-1">
+            <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -333,7 +371,7 @@
                     </div>
                 </div>
             </div>
-            <div class="3kares-most-visited p-sm-5 p-1">
+            <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -406,7 +444,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-sm-5 p-1">
+            <div class="">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -443,9 +481,9 @@
                     </div>
                 </div>
             </div>
+ 
 
-
-            <div class="3kares-most-visited p-sm-5 p-1">
+            <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -517,49 +555,14 @@
 
 
 
-            <div class="3kares-most-visited A3kar-type p-sm-5 p-1">
-                <div class="container">
-                    <div class="title d-flex flex-wrap justify-content-between align-items-center">
-                        <div>
-                            <h1 class="mt-5 mb-4">نوع العقار</h1>
-                            <span class="heading-divider"></span>
-                            <p class="mb-5 fs-5">تصفح احدث عقارات اليوم.</p>
-                        </div>
-
-                    </div>
-                    <div class="row">
-
-
-                        @foreach ($catogerys as $item)
-                            <div class="col-lg-3 my-2">
-                                <div class="properti_city position-relative">
-                                    <a href="morepropertyCato/{{ $item->id }}">
-                                        <div class="thumb"><img class="img-fluid w-100"
-                                                src="{{ $item->image_path }}" alt="pc1.jpg"></div>
-                                        <div class="overlay">
-                                            <div class="details text-light">
-                                                <h4>{{ $item->name }}</h4>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
+   
 
 
 
 
 
 
-            <div class="3kares-most-visited p-sm-5 p-1">
+            <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>

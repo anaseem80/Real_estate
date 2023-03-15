@@ -1,3 +1,5 @@
+@extends('layouts.master2')
+
 <!DOCTYPE html>
     <html lang="en" dir="rtl">
     <head>
@@ -85,11 +87,12 @@
         <title>{{$property->name}}</title>
         <link rel="icon" href="/logoapp (1).png">
     </head>
-    <body>
-        @include('layouts.headone')
+    <body class="bg-white">
         @include('layouts.nav')
     
-
+    <div class="text-center py-5" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
+       <h1 class="text-white">{{$property->name}}</h1>
+    </div>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -170,35 +173,32 @@
                             <h1 class="blue-color"><span class="english-font text-dark">AED / </span>{{$property->property_details->price}}$</h1>
                             <p class="english-font text-dark m-0 p-1">{{$property->views}} <i class="fa fa-eye"></i></p>
                         </div>   
-                        <ul class="property-main-features list-unstyled d-flex justify-content-between flex-wrap p-sm-5 p-lg-4 mt-4">
-                            <li>اسم العقار <span class="english-font text-dark text-dark d-block">{{$property->name}}</span></li>
-                            <li>مكان العقار <span class="english-font text-dark text-dark d-block">{{$property->country}}</span></li>
-                            <li>اسم المعلن<span class="english-font text-dark text-dark d-block">{{$property->user->name}}</span></li>
-                            <li>رقم العقار <span class="english-font text-dark text-dark d-block">{{$property->property_details->id}}</span></li>
-                            <li>المساحة الكليه <span class="english-font text-dark text-dark d-block">{{$property->property_details->space}} / m</span></li>
+                        <ul class="property-main-features list-unstyled p-0 mt-4">
+                            <li class="p-3 bg-light">اسم العقار <span class="english-font text-dark text-dark d-block"> : {{$property->name}}</span></li>
+                            <li class="p-3 bg-light">مكان العقار <span class="english-font text-dark text-dark d-block"> : {{$property->country}}</span></li>
+                            <li class="p-3 bg-light">اسم المعلن<span class="english-font text-dark text-dark d-block"> : {{$property->user->name}}</span></li>
+                            <li class="p-3 bg-light">رقم العقار <span class="english-font text-dark text-dark d-block"> : {{$property->property_details->id}}</span></li>
+                            <li class="p-3 bg-light">المساحة الكليه <span class="english-font text-dark text-dark d-block"> : {{$property->property_details->space}} / m</span></li>
                         </ul>                        
                         <div class="real-estate-description">
-                            <h3 class="mt-5">الوصف</h3>
-                            <hr class="my-4">
+                            <h3 class="mt-5 text-dark">الوصف</h3>
                             <p>{{$property->name}} </p>
                         </div>
                         <div class="real-estate-description">
-                            <h3 class="mt-5">التفاصيل</h3>
-                            <hr class="my-4">
+                            <h3 class="mt-5 text-dark">التفاصيل</h3>
                             <ul class="property-features margin-top-0 list-unstyled p-0 mt-4">
-                                <li class="mb-3">رقم العقار: <span class="english-font text-dark text-dark">4</span></li>
-                                <li class="mb-3"> عدد الحمامات: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_toilet}}</span></li>
-                                <li class="mb-3"> عدد الغرف: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_room}}</span></li>
-                                <li class="mb-3">نوع المبني: <span>{{$property->catogery->name}}</span></li>
-                                <li class="mb-3">الإتجاة: <span>{{$property->property_details->property_direction}}</span></li>
+                                <li class="p-3 bg-light">رقم العقار: <span class="english-font text-dark text-dark">4</span></li>
+                                <li class="p-3 bg-light"> عدد الحمامات: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_toilet}}</span></li>
+                                <li class="p-3 bg-light"> عدد الغرف: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_room}}</span></li>
+                                <li class="p-3 bg-light">نوع المبني: <span>{{$property->catogery->name}}</span></li>
+                                <li class="p-3 bg-light">الإتجاة: <span>{{$property->property_details->property_direction}}</span></li>
                             </ul>
                         </div>
                         <div class="real-estate-description">
-                            <h3 class="mt-5">الخصائص</h3>
-                            <hr class="my-4">
+                            <h3 class="mt-5 text-dark">الخصائص</h3>
                             <ul class="property-features margin-top-0 list-unstyled p-0 mt-4 d-block">
                             @foreach ($property->facilities as $item)
-                            <li class="mb-3"><i class="fa fa-check bg-primary text-white p-1"></i> <span class="english-font text-dark">{{$item->facility}}</span></li>
+                            <li class="p-3 bg-light"><i class="fa fa-check bg-primary text-white p-1"></i> <span class="english-font text-dark">{{$item->facility}}</span></li>
                             @endforeach
                             </ul>
                         </div>
@@ -209,7 +209,7 @@
                         </div> -->
                     </div>
                     <div class="col-lg-4">
-                        <div class="box  p-4 mt-4">
+                        <div class="box p-4 mt-4 bg-light">
                             <h5 class="mb-4">أستعلم الان عن هذا الإعلان</h5>
                             <?php 
                             $currenturl = url()->full();
@@ -240,7 +240,7 @@
                                 <button  name="property_id" value="{{$property->id}}" class="btn rounded-0 px-5 py-3 mt-4 blue-background-color d-flex align-items-center w-100 text-center justify-content-center">إستعلام <i class="fa fa-search me-2">  </i></button>
                             </form> -->
                         </div>
-                        <div class="box  p-4 mt-4">
+                        <div class="box p-4 mt-4 bg-light">
                             <h5 class="mb-4"><i class="fa fa-warning text-danger"></i> الإبلاغ عن العقار</h5>
                             <form action="{{ route("addreport") }}" method="post" enctype="multipart/form-data">
                                 {{ method_field('post') }}
