@@ -29,10 +29,10 @@
     </div>
     
     @if ($control != 'PurposeOfPurchase' && $control != 'investment' && $control != 'residential')
-        <div class="page-content p-lg-5 p-sm-1">
+        <div class="page-content p-lg-5 p-sm-4">
             <div class="container">
 
-                <div class="page-content p-lg-5 p-sm-1 text-center">
+                <div class="page-content p-lg-5 p-sm-4 text-center">
                     <div class="container">
                         <img src="{{ asset('assets/img/hello.gif') }}" class="d-block img-fluid m-auto" alt="">
                         <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">للبدأ اضغط هنا</a>
@@ -44,7 +44,7 @@
         </div>
     @endif
     @if ($control == 'PurposeOfPurchase')
-        <div class="page-content p-lg-5 p-sm-1 text-center">
+        <div class="page-content p-lg-5 p-sm-4 text-center">
             <div class="container">
                 <p class="fs-5">
                     <strong> ايه الغرض من الشراء ؟</strong>
@@ -57,13 +57,13 @@
 
 
     @if ($control == 'investment')
-    <div class="page-content p-lg-5 p-sm-1">
+    <div class="page-content p-lg-5 p-sm-4">
             <form action="{{ route('advisors.PurposeOfPurchase') }}"method="get" enctype="multipart/form-data">
                 <!-- row -->
-                <div class="row">
-                    <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
+                <div class="">
+                    <div class="">
                         <!--div-->
-                                <div class="row row-sm">
+                                <div class="">
                                     <div class="mb-4">
                                         <p class="mg-b-10">تحب نوع الإستثمار ايه؟</p>
                                         <select name="cate" class="form-control SlectBox">
@@ -82,10 +82,10 @@
   @if($control == 'residential')
   <form action="{{ route('advisors.PurposeOfPurchase') }}"method="get" enctype="multipart/form-data">
     <!-- row -->
-    <div class="row">
-        <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
+    <div class="">
+        <div class="">
             <!--div-->
-                <div class="page-content p-lg-5 p-sm-1">
+                <div class="page-content p-lg-5 p-sm-4">
                     <div class="mb-4">
                         <p class="mg-b-10">تحب نوع السكن ايه؟</p>
                         <select name="cate" class="form-control SlectBox">

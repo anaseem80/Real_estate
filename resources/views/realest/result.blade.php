@@ -26,10 +26,10 @@
     @endphp
     @include('layouts.nav')
 
-    <div class="page-content p-lg-5 p-sm-1">
+    <div class="page-content p-lg-5 p-sm-4">
         <div class="container">
             @if (count($searchs) > 0)
-                <div class="page-content p-lg-5 p-sm-1">
+                <div class="page-content p-lg-5 p-sm-4">
                     <div class="container">
                         <p class="fs-5">
                         <h4 class="alert alert-info"><strong>{{ Auth::user()->name }} :

@@ -30,7 +30,7 @@
         <form action="{{ route('advisors.contract') }}"method="get" enctype="multipart/form-data">
                 <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
                     <!--div-->
-                            <div class="page-content p-lg-5 p-sm-1">
+                            <div class="page-content p-lg-5 p-sm-4">
 
                                 {{--  <div class="mb-4">
                                     <p class="mg-b-10">عنوان {{ $PurposeOfPurchase }} تحب يكون فين </p>

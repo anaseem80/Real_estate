@@ -24,7 +24,7 @@
             <h1>المستشار العقاري</h1>
         </div>
         <form action="{{ route('advisors.addressProp') }}"method="get" enctype="multipart/form-data">
-            <div class="page-content p-lg-5 p-sm-1">
+            <div class="page-content p-lg-5 p-sm-4">
                 <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
                     <div>
 
