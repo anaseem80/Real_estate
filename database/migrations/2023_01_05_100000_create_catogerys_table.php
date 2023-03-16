@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Created_by');
             $table->string('image_path');
             $table->bigInteger('proType_id');
+            $table->bigInteger('count');
             $table->timestamps();
         });
     }

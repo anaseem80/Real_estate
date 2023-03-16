@@ -18,25 +18,25 @@ class AdvisorController extends Controller
 
     public function PurposeOfPurchase(Request $request)
     {
-        $PurposeOfPurchase = $request->cate;
+        $PurposeOfPurchase = $request->name;
         return view('realest.space', compact('PurposeOfPurchase'));
     }
     public function addressProp(Request $request)
     {
-        $PurposeOfPurchase = $request->cate;
+        $PurposeOfPurchase = $request->name;
         $space =  $request->space;
         return view('realest.addressProp', compact('PurposeOfPurchase', 'space'));
     }
     public function contract(Request $request)
     {
-        $PurposeOfPurchase = $request->cate;
+        $PurposeOfPurchase = $request->name;
         $space =  $request->space;
         $address = $request->address;
         return view('realest.contract', compact('PurposeOfPurchase', 'space', 'address'));
     }
     public function paying(Request $request)
     {
-        $PurposeOfPurchase = $request->cate;
+        $PurposeOfPurchase = $request->name;
         $space =  $request->space;
         $address = $request->address;
         $Rental = $request->Rental;
@@ -47,12 +47,16 @@ class AdvisorController extends Controller
     }
     public function search(Request $request)
     {
-        $PurposeOfPurchase = $request->cate;
+        $PurposeOfPurchase = $request->name;
         $space =  $request->space;
         $address = $request->address;
         $Rental = $request->Rental;
         $Rental_term = $request->Rental_term;
-        $searchs = Property::where($request->all())->get();
-        return view('realest.result', compact('PurposeOfPurchase', 'space', 'address', 'Rental', 'Rental_term', 'searchs'));
+        $searchs = Property::whereHas('catogery')->whereHas('property_details')->whereRelation('catogery','name',$request->name)
+                            ->whereRelation('property_details','Rental_term',$request->Rental_term)
+                            ->whereRelation('property_details','space',$request->space)
+                            ->where('country','=',$request->address)
+                            ->get();
+        return view('realest.result', compact('PurposeOfPurchase','space', 'address', 'Rental', 'Rental_term', 'searchs'));
     }
 }

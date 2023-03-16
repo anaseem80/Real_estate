@@ -33,10 +33,10 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
             'Rental_term' => 'شهري',
-            
+
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
             'building_type' => 'سكني',
@@ -46,7 +46,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -54,7 +54,7 @@ class PropertiesTableSeeder extends Seeder
 
         DB::table('property_detalis')->insert($property_details);
 
-        $property_images = [        
+        $property_images = [
           [
             'property_id' => $property_id,
             'image_path' => 'property/a.png',
@@ -69,7 +69,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -125,9 +125,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'سنوي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -138,7 +138,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -146,7 +146,7 @@ class PropertiesTableSeeder extends Seeder
 
         DB::table('property_detalis')->insert($property_details);
 
-        $property_images = [    
+        $property_images = [
             [
                 'property_id' => $property_id,
                 'image_path' => 'property/b.png',
@@ -161,7 +161,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -215,9 +215,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'للبيع',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -249,7 +249,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -303,9 +303,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'يومي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -315,7 +315,7 @@ class PropertiesTableSeeder extends Seeder
             'numbeer_toilet' => rand(1, 10),
             'longitude' => '55.296249',
             'latitude' => '25.276987',
-            'address' => 'دبي مول وبجوار برج خليفة',            
+            'address' => 'دبي مول وبجوار برج خليفة',
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -323,7 +323,7 @@ class PropertiesTableSeeder extends Seeder
 
         DB::table('property_detalis')->insert($property_details);
 
-        $property_images = [          
+        $property_images = [
               [
             'property_id' => $property_id,
             'image_path' => 'property/d.png',
@@ -338,7 +338,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -348,7 +348,7 @@ class PropertiesTableSeeder extends Seeder
 
         DB::table('images')->insert($property_images);
 
-        $property_facilities = [            
+        $property_facilities = [
             [
                 'property_id' => $property_id,
                 'facility' => 'مكيفات',
@@ -392,9 +392,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'سنوي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -405,7 +405,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -427,7 +427,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -481,9 +481,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'شهري',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -494,7 +494,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -516,7 +516,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -570,9 +570,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'للبيع',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -583,7 +583,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -605,7 +605,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -659,8 +659,8 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
-            'price' => rand(1, 1000),           
+
+            'price' => rand(1, 1000),
             'Rental_term' => 'للبيع',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -670,7 +670,7 @@ class PropertiesTableSeeder extends Seeder
             'numbeer_toilet' => rand(1, 10),
             'longitude' => '55.296249',
             'latitude' => '25.276987',
-            'address' => 'دبي مول وبجوار برج خليفة',          
+            'address' => 'دبي مول وبجوار برج خليفة',
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -692,7 +692,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -746,9 +746,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'سنوي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -759,7 +759,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -781,7 +781,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -835,9 +835,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'للبيع',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -848,7 +848,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -870,7 +870,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -924,9 +924,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'يومي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -937,7 +937,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -959,7 +959,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -1013,9 +1013,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'يومي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -1026,7 +1026,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -1048,7 +1048,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -1058,7 +1058,7 @@ class PropertiesTableSeeder extends Seeder
 
         DB::table('images')->insert($property_images);
 
-        $property_facilities = [        
+        $property_facilities = [
             [
                 'property_id' => $property_id,
                 'facility' => 'مكيفات',
@@ -1102,9 +1102,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'للبيع',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -1115,7 +1115,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -1137,7 +1137,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -1191,9 +1191,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'شهري',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -1204,7 +1204,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -1228,7 +1228,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',
@@ -1282,9 +1282,9 @@ class PropertiesTableSeeder extends Seeder
         $property_id = DB::table('properties')->insertGetId($property);
 
         $property_details = [
-            
+
             'price' => rand(1, 1000),
-            
+
             'Rental_term' => 'سنوي',
             'description' => 'عند اضافة وصف سيظهر هنا',
             'space' => rand(1, 999),
@@ -1295,7 +1295,7 @@ class PropertiesTableSeeder extends Seeder
             'longitude' => '55.296249',
             'latitude' => '25.276987',
             'address' => 'دبي مول وبجوار برج خليفة',
-            
+
             'seller_phone' => '555-555-5555',
 
             'property_id' => $property_id,
@@ -1303,8 +1303,8 @@ class PropertiesTableSeeder extends Seeder
 
         DB::table('property_detalis')->insert($property_details);
 
-        $property_images = [            [ 
-      
+        $property_images = [            [
+
             'property_id' => $property_id,
             'image_path' => 'property/i.png',
 
@@ -1318,7 +1318,7 @@ class PropertiesTableSeeder extends Seeder
                 'property_id' => $property_id,
                 'image_path' => 'property/bb.png',
 
-            ],  
+            ],
               [
                 'property_id' => $property_id,
                 'image_path' => 'property/cc.png',

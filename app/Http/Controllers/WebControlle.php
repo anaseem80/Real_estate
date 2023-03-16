@@ -28,19 +28,18 @@ class WebControlle extends Controller
         $propertiesRec = Property::where('recommended', 1)->get();
         $newforsale = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'للبيع')->limit(10)->get();
         $newForRent = PropertyDetalis::whereHas('property')->orderBy('id', 'desc')->where('Rental_term', 'سنوي')->orWhere('Rental_term', 'شهري')->orWhere('Rental_term', 'يومي')->limit(10)->get();
-
         $catogerys = Catogery::all();
         return view(
             'realest.test',
             [
-                'mostCountries' => $mostCountries,
-                'propertiesviews' => $propertiesviews,
-                'newProperties' => $newProperties,
-                'newCommercial' => $newCommercial,
-                'propertiesRec' => $propertiesRec->where('status', 1),
-                'catogerys' =>  $catogerys,
-                'newforsale' => $newforsale,
-                'newForRent' => $newForRent
+                'mostCountries'     => $mostCountries,
+                'propertiesviews'   => $propertiesviews,
+                'newProperties'     => $newProperties,
+                'newCommercial'     => $newCommercial,
+                'propertiesRec'     => $propertiesRec->where('status', 1),
+                'catogerys'         => $catogerys,
+                'newforsale'        => $newforsale,
+                'newForRent'        => $newForRent
             ]
         );
     }
@@ -70,11 +69,11 @@ class WebControlle extends Controller
 
     public function morepropertyCato($catogery)
     {
-        $property = Property::whereHas('catogery')->where('catogerie_id', $catogery)->get();
+        $property = Property::whereHas('catogery')->whereRelation('catogery','id', $catogery)->where('status',1)->get();
 
 
 
-        return view('realest.more_view', ['property' => $property]);
+        return view('realest.more_view', ['property' => $property,'catogery'=>$catogery]);
     }
 
 

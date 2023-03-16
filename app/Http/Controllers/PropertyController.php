@@ -230,6 +230,11 @@ class PropertyController extends Controller
         } else {
             $property->status = 0;
         }
+        $num = 1;
+        $cate = Catogery::select('count')->where('id',$request->catogerie_id)->get();
+        Catogery::where('id',$request->catogerie_id)->update([
+            'count' => $num
+        ]);
         $property->save();
 
 

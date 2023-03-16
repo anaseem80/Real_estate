@@ -26,7 +26,7 @@
         <div class="text-center py-5 banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
             <h1>المستشار العقاري</h1>
         </div>
-    
+
 
         <form action="{{ route('advisors.contract') }}"method="get" enctype="multipart/form-data">
                 <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
@@ -42,7 +42,7 @@
                                 </div>  --}}
                                 <div class="">
                                     <label for="rent type">عنوان {{ $PurposeOfPurchase }} </label>
-                                    <select class="form-control ms-2 rounded-0 w-100"  id="address" name="address">
+                                    <select class="form-control ms-2 rounded-0 w-100"  id="address" name="country">
                                         <option selected>اختر عنوان {{ $PurposeOfPurchase }}</option>
                                         <option value="التجمع الخامس">التجمع الخامس</option>
                                         <option value="التجمع الأول">التجمع الأول</option>
@@ -52,9 +52,9 @@
                                         <option value="6">أخر</option>
                                     </select>
                                 </div>
-                                <input type="text" class="form-control ms-2 rounded-0 p-3 mt-3" style="display: none" name="address" id="addressInput" placeholder="أكتب العنوان الي تحبو حضرتك">
+                                <input type="text" class="form-control ms-2 rounded-0 p-3 mt-3" style="display: none" name="country" id="addressInput" placeholder="أكتب العنوان الي تحبو حضرتك">
                                 <input class="form-control mt-3" autocomplete="off"
-                                            placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="cate">
+                                            placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="name">
                                             <input class="form-control mt-3" autocomplete="off"
                                             placeholder="مساحة " hidden value="{{ $space }}" type="text" name="space">
                             <input type="submit" value="التالي"
@@ -63,6 +63,8 @@
                             </div>
                 </div>
         </form>
+        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">Back</a>
+
         @include('layouts.fotterone')
 
         <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
@@ -87,7 +89,7 @@
                     if($(this).val() == '6')
                     {
                         $("#addressInput").css("display","block")
-                    } 
+                    }
                     else
                     {
                         $("#addressInput").css("display","none")

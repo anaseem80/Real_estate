@@ -38,18 +38,18 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-         
+
             'phone' => 'required|numeric',
-    
-    
+
+
         ],[
-    
-        
+
+
             'phone.numeric' =>'يرجي ادخال رقم الهاتف عدد وليس اي شئ اخر',
         ]);
 
         $user = new User(); // اسم المودل
-        $user->name = $request->name; 
+        $user->name = $request->name;
 
         $user->user_type = $request->user_type;
         $user->phone = $request->phone;
@@ -101,8 +101,8 @@ class UserController extends Controller
             'phone.numeric' =>'يرجي ادخال رقم الهاتف عدد وليس اي شئ اخر',
         ]);
            $user =  User::findorFail($request->pro_id);
-           $user->name = $request->name; 
-           $user->number_ads = $request->number_ads; 
+           $user->name = $request->name;
+           $user->number_ads = $request->number_ads;
            $user->user_type = $request->user_type;
            $user->phone = $request->phone;
            $user->country = $request->country;
@@ -120,7 +120,7 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        
+
         $property = User::findOrFail($request->pro_id);
         $property->delete();
         session()->flash('delete', 'تم حذف المنتج بنجاح');

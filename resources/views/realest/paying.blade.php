@@ -24,7 +24,7 @@
     <div class="text-center py-5 banner-site" style="background-image:url({{ asset('assets/img/backgrounds/1.jpg') }})">
         <h1>المستشار العقاري</h1>
     </div>
-    
+
 
         <form action="{{ route('advisors.search') }}"method="get" enctype="multipart/form-data">
             <!-- row -->
@@ -39,14 +39,7 @@
                                             placeholder="مساحة {{ $PurposeOfPurchase }}" type="text" name="space">
                                     </div>
                                 </div>  --}}
-                                <div class="mb-3 mb-lg-0">
-                                    <label for="rent type">قسط/كاش</label>
-                                    <select class="form-control w-100 rounded-0" id="contract" name="payment_method">
-                                        <option selected disabled>عايز تدفع بالقسط ولا كاش</option>
-                                        <option value="قسط">قسط</option>
-                                        <option value="كاش">كاش</option>
-                                    </select>
-                                </div>
+
                                 <input type="submit" value="إرسال"
                                     class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
                             </div>

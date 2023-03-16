@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('property_detalis', function (Blueprint $table) {
             $table->id();
             $table->double('price');
-          //  $table->double('type_property')->nullable();
             $table->string('Rental_term')->nullable();
             $table->text('description');
             $table->double('space');

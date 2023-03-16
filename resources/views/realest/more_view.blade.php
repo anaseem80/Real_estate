@@ -111,14 +111,7 @@
                     <div class="row">
 
 
-
-
                         @if ($property->count() > 0)
-
-
-
-
-
                             @foreach ($property as $item)
                                 <div class="col-xl-4 col-lg-6 col-md-12 item mb-3">
                                     <div class="card" dir="rtl">

@@ -13,6 +13,7 @@ class Catogery extends Model
         'name',
         'image_path',
         'Created_by',
+        'count'
     ];
     public function property()
     {
