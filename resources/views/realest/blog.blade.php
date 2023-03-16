@@ -76,7 +76,7 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="{{ route('showblog', $item->id) }}"><img src="/{{$item->image}}" alt=""></a>
+                                    <a href="{{ route('showblog', $item->id) }}"><img src="{{asset('$item->image') }}" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
