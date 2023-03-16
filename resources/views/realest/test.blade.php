@@ -1,4 +1,3 @@
-@extends('layouts.master2')
 
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -29,6 +28,9 @@
 </head>
 
 <body class="bg-white">
+    <div id="global-loader">
+			<img src="{{URL::asset('assets/img/loader.svg')}}" class="loader-img" alt="Loader">
+	</div>
     @include('layouts.nav')
     <div class="3kares-most-visited" style="margin-top:100px">
         <div class="container">
@@ -623,5 +625,6 @@
         <script src="{{ URL::asset('assets/plugins/select2/js/select2.min.js') }}"></script>
         <script src="{{ URL::asset('assets/js/select2.js') }}"></script>
     @endsection
+    @include('layouts.footer-scripts')	
     </body>
 </html>
