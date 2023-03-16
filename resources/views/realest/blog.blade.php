@@ -12,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>المدونه</title>
     <meta name="description" content="Roxy">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
     <link rel="icon" href="{{URL::asset('assets/img/brand/favicon-white.png')}}" type="image/x-icon"/>
