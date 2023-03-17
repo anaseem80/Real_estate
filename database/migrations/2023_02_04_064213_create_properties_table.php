@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('picture');
             $table->string('country');
-            $table->string('payment_method');
+            $table->string('payment_method')->nullable();
             $table->string('pay');
             $table->integer('status')->default(0);
             $table->integer('views')->default(0);

@@ -173,7 +173,6 @@ class PropertyController extends Controller
             'country' => 'required|string|max:255',
             'catogerie_id' => 'required|integer',
             'price' => 'required|numeric',
-            'payment_method' => 'required',
             'pay' => 'required',
             'proType_id' => 'required',
             'description' => 'required|string',
