@@ -111,7 +111,7 @@
 
                     <div class="col-lg-6 mb-3 mb-lg-0 payMethod">
                         <label for="rent type">بيع/ايجار</label>
-                        <select class="form-control rounded-0  rent" id="rent type" name="Rental_term">
+                        <select class="form-control rounded-0  rent" id="rentType" name="Rental_term">
                             <option selected disabled>رجاء الأختيار</option>
                             <option title="Volvo is a car" value="سنوي">سنوي</option>
                             <option value="شهري">شهري</option>
@@ -119,7 +119,14 @@
                             <option value="تمليك">للبيع</option>
                         </select>
                     </div>
-
+                    <div class="mb-3 mb-lg-0" id="payMethod1" style="display: none">
+                        <label for="rent type">قسط/كاش</label>
+                        <select class="form-control w-100 rounded-0" id="contract" name="payment_method">
+                            <option selected disabled>عايز تدفع بالقسط ولا كاش</option>
+                            <option value="قسط">قسط</option>
+                            <option value="كاش">كاش</option>
+                        </select>
+                    </div>
 
                     <div class="col-lg-6 mb-3 mb-lg-0 direction" style="display:none">
                         <label for="direction">مكان العقار </label>
@@ -162,14 +169,7 @@
                             <option value="10">10</option>
                         </select>
                     </div>
-                    <div class="col-lg-12 mb-3 mb-lg-0 payment-method" style="display:none">
-                        <label for="rent type">طريقة الدفع</label>
-                        <select class="form-control rounded-0 " id="rent type" name="payment_method">
-                            <option selected disabled>رجاء الأختيار</option>
-                            <option value="قسط">قسط</option>
-                            <option value="كاش">كاش</option>
-                        </select>
-                    </div>
+
                     <div class="form-group mb-3">
                         <label for="rent type">السعر الكلي</label>
                         <input type="text" name="pay" class="form-control ms-2 rounded-0 " placeholder="البادجت/المزانية">
@@ -244,12 +244,23 @@
         $(".select2").select2()
         $(document).ready(function(e) {
             if ($(this).val() == "شهري" || $(this).val() == "يومي" || $(this).val() == "سنوي") {
-                $(".payMethod").css("display", "none")
+                $(".payment-method").css("display", "none")
             } else {
-                $(".payMethod").css("display", "block")
+                $(".payment-method").css("display", "block")
             }
         })
 
+    </script>
+    <script>
+        $("#rentType").on('change',function(){
+            if($(this).val() == 'سنوي' ||$(this).val() == 'شهري' ||$(this).val() == 'يومي' )
+            {
+                $("#payMethod1").css('display','none')
+            } else
+            {
+                $("#payMethod1").css('display','block')
+            }
+        });
     </script>
     <script>
         $("#proType_id").on("change", function() {
