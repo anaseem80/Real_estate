@@ -229,7 +229,7 @@ class PropertyController extends Controller
         } else {
             $property->status = 0;
         }
-        $num = 1;
+        $num = 0;
         $cate = Catogery::select('count')->where('id',$request->catogerie_id)->get();
         Catogery::where('id',$request->catogerie_id)->update([
             'count' => $num
@@ -302,7 +302,11 @@ class PropertyController extends Controller
      */
     public function edit(Request $request)
     {
+        $cate = Catogery::whereHas('property')->whereRelation('property','id',$request->id)->update([
+            'count' => 1
+        ]);
         $user =  Property::findorFail($request->id);
+
         $user->status = 1;
         $user->save();
         session()->flash('Edit', 'تم قبول الاعلان بنجاح');
