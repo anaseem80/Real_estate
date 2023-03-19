@@ -55,7 +55,6 @@ class AdvisorController extends Controller
         $searchs = Property::whereHas('catogery')->whereHas('property_details')->whereRelation('catogery','name',$request->name)
                             ->whereRelation('property_details','Rental_term',$request->Rental_term)
                             ->whereRelation('property_details','space',$request->space)
-                            ->where('country','=',$request->address)
                             ->get();
         return view('realest.result', compact('PurposeOfPurchase','space', 'address', 'Rental', 'Rental_term', 'searchs'));
     }
