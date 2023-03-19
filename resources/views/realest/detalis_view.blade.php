@@ -179,6 +179,7 @@
                     </div>
                     <ul class="property-main-features list-unstyled p-0 mt-4">
                         <li class="p-3 bg-light">اسم العقار <span class="english-font text-dark text-dark d-block"> : {{$property->name}}</span></li>
+                        <li class="p-3 bg-light">عنوان العقار <span class="english-font text-dark text-dark d-block"> : {{$property->country}}</span></li>
                         <li class="p-3 bg-light">مكان العقار <span class="english-font text-dark text-dark d-block"> : {{$property->country}}</span></li>
                         <li class="p-3 bg-light">اسم المعلن<span class="english-font text-dark text-dark d-block"> : {{$property->user->name}}</span></li>
                         <li class="p-3 bg-light">رقم العقار <span class="english-font text-dark text-dark d-block"> : {{$property->property_details->id}}</span></li>

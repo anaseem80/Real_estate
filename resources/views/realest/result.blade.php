@@ -29,7 +29,7 @@
 
     <div class="page-content p-4">
         <div class="container">
-            @if ($searchs)
+            @if ($searchs->count() > 0)
             <div class="page-content p-4">
                 <div class="container">
                     <p class="fs-5">
@@ -41,9 +41,7 @@
                 </div>
 
             </div>
-            if($control == 'search')
             <div class="owl-carousel py-5 owl-theme">
-            @if (is_array($searchs) || is_object($searchs))
                 @foreach ($searchs as $item)
                 <div class="item">
                     <div class="card" dir="rtl">
@@ -100,7 +98,6 @@
             </div>
         </div>
     </div>
-    @endif
     <input class="form-control" autocomplete="off" placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="cate">
     <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $space }}" type="text" name="space">
     <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $address }}" type="text" name="address">
