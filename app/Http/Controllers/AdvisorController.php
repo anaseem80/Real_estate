@@ -54,7 +54,7 @@ class AdvisorController extends Controller
         $Rental = $request->Rental;
         $Rental_term = $request->Rental_term;
         $search = Catogery::select('name')->where('name',$request->name)->get();
-        $search2 = Property::select('picture','country','created_at')->where('country',$request->country)->get();
+        $search2 = Property::select('name','picture','country','created_at')->where('country',$request->country)->get();
         $search3 = PropertyDetalis::where('Rental_term',$request->Rental_term)->where('space',$request->space,)->where('price',$request->price)->get();
         // $searchs = $search;
         $searchs = $search2;
