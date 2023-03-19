@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catogery;
 use App\Models\Property;
 use App\Models\PropertyDetalis;
 use App\Models\PropetieType;
@@ -49,13 +50,16 @@ class AdvisorController extends Controller
     {
         $PurposeOfPurchase = $request->name;
         $space =  $request->space;
-        $address = $request->address;
+        $address = $request->country;
         $Rental = $request->Rental;
         $Rental_term = $request->Rental_term;
-        $searchs = Property::whereHas('catogery')->whereHas('property_details')->whereRelation('catogery','name',$request->name)
-                            ->whereRelation('property_details','Rental_term',$request->Rental_term)
-                            ->whereRelation('property_details','space',$request->space)
-                            ->get();
+        $search = Catogery::select('name')->where('name',$request->name)->get();
+        $search2 = Property::select('picture','country','created_at')->where('country',$request->country)->get();
+        $search3 = PropertyDetalis::where('Rental_term',$request->Rental_term)->where('space',$request->space,)->where('price',$request->price)->get();
+        // $searchs = $search;
+        $searchs = $search2;
+        // $searchs = $search3;
+
         return view('realest.result', compact('PurposeOfPurchase','space', 'address', 'Rental', 'Rental_term', 'searchs'));
     }
 }
