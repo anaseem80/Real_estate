@@ -75,7 +75,7 @@
             </div>
             <input class="form-control" autocomplete="off" placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="name">
             <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $space }}" type="text" name="space">
-            <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $address }}" type="text" name="country">
+            <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $country }}" type="text" name="country">
             <input type="submit" value="إرسال" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
         </div>
         </div>

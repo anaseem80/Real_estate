@@ -32,8 +32,8 @@ class AdvisorController extends Controller
     {
         $PurposeOfPurchase = $request->name;
         $space =  $request->space;
-        $address = $request->address;
-        return view('realest.contract', compact('PurposeOfPurchase', 'space', 'address'));
+        $country = $request->country;
+        return view('realest.contract', compact('PurposeOfPurchase', 'space', 'country'));
     }
     public function paying(Request $request)
     {
