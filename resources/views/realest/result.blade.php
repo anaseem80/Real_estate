@@ -60,10 +60,9 @@
                         <div class="card-body mt-2 p-0">
                             <div class="px-4">
                                 <p class="text-danger fw-bold">حصري</p>
-                                <a href="detelisscreen/{{ $item->id }}" class="text-decoration-none">
+                                <a href="{{ url('detelisscreen',$item->id) }}" class="text-decoration-none">
                                     <h5 class="card-title mt-3 fw-bold gray-color">
-                                        {{ $item->name }}
-                                    </h5>
+                                        {{ $item->name }}</h5>
                                 </a>
                                 <p class="mt-3 fw-light d-flex align-items-center gray-color">
                                     <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg" class="location ms-2" width="15" height="15" alt="">{{ $item->country }}
