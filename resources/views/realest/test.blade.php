@@ -432,7 +432,6 @@
                             <span class="heading-divider"></span>
                             <p class="mb-5 fs-5">تصفح العقارات الموصى بها.</p>
                         </div>
-
                     </div>
                     <div class="owl-carousel py-5 owl-theme">
 
@@ -465,11 +464,6 @@
                                         <p class="mt-3 fw-light d-flex align-items-center gray-color">
                                             <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg" class="location ms-2" width="15" height="15" alt="">{{ $item->country }}
                                         </p>
-                                        <!-- <ul class="p-0 d-flex justify-content-between">
-                                     <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
-                                     <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
-                                     <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
-                                 </ul> -->
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
@@ -498,7 +492,7 @@
 
 
 
-            <div class="3kares-most-visited ">
+            <!-- <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -577,7 +571,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     @include('layouts.fotterone')
