@@ -571,8 +571,9 @@
                     </div>
                 </div>
             </div>
+            @else
+            لا يتوفر بيانات
             @endif
-
 
 
         </div>
