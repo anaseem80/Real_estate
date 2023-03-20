@@ -50,8 +50,18 @@
             <p class="fs-5">
                 <strong> ايه الغرض من الشراء ؟</strong>
             </p>
-            <a href="advisors?control=investment" class="btn btn-primary rounded-0">إستثمار</a>
-            <a href="advisors?control=residential" class="btn btn-primary rounded-0">سكني</a>
+            <div class="row">
+                <a href="advisors?control=investment" class="col-lg-6 rounded-0 text-decoration-none text-dark fs-4">
+                    <div class="border p-5 rounded">
+                        إستثمار
+                    </div>
+                </a>
+                <a href="advisors?control=residential" class="col-lg-6 rounded-0 text-decoration-none text-dark fs-4">
+                    <div class="border p-5 rounded">
+                    سكني
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     @endif
@@ -73,11 +83,16 @@
                             </select>
                         </div>
                     </div>
-                    <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
+                    <div>
+                    <div class="d-flex justify-content-between">
+                        <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center text-center justify-content-center">
+                        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info rounded-0 px-5 py-3 my-4 text-center">السابق</a>
+                    </div>
+                    </div>
+
                 </div>
             </div>
         </form>
-        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">Back</a>
 
     </div>
     @endif
@@ -95,16 +110,16 @@
                             <option value="فندق">فندق</option>
                             <option value="شاليه">شاليه </option>
                             <option value="فيلا">فيلا</option>
-
                         </select>
                     </div>
-                    <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
-
+                    <div class="d-flex justify-content-between">
+                        <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center text-center justify-content-center">
+                        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info rounded-0 px-5 py-3 my-4 text-center">السابق</a>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
-    <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">Back</a>
     @endif
     @include('layouts.fotterone')
     <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>

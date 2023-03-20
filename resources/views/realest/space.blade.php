@@ -38,12 +38,13 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
-            </div>
+                <div class="d-flex justify-content-between">
+                        <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center text-center justify-content-center">
+                        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info rounded-0 px-5 py-3 my-4 text-center">السابق</a>
+                    </div>
+                </div>
         </div>
     </form>
-    <a href="{{ route('advisors.PurposeOfPurchase') }}" class="btn btn-info">Back</a>
-
     @include('layouts.fotterone')
     <script src="{{ asset('assets/js/libraries/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/libraries/owl.carousel.min.js') }}"></script>

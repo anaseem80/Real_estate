@@ -31,7 +31,24 @@
         <img src="{{URL::asset('assets/img/loader.svg')}}" class="loader-img" alt="Loader">
     </div>
     @include('layouts.nav')
-    <div class="3kares-most-visited" style="margin-top:100px">
+    <header style="background-image:url('{{URL::asset('assets/img/landing-carousel-1.webp')}}');margin-top:100px" class="position-relative">
+        <div class="shadow"></div>
+        <div class="header-content position-relative">
+            <div class="container">
+                <div class="col-lg-8 m-auto">
+                    <h1 class="mb-3 fw-bold text-center">أعثر علي منزل أحلامك!</h1>
+                    <form method="GET" action="{{ route('search') }}">
+                        <div class="input-group mb-3 position-relative">
+                            <input type="text" autocomplete="off" name="search" class="form-control rounded-pill p-3"
+                                placeholder="الأسم أو المكان" aria-label="Search" aria-describedby="button-addon2" required>
+                            <button class="btn btn-success search-button border-0 position-absolute start-0" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="3kares-most-visited">
         <div class="container">
             <div class="title d-flex flex-wrap justify-content-between align-items-center">
                 <div>
@@ -46,7 +63,7 @@
 
                 @foreach ($propertiesviews as $item)
                 <div class="item">
-                    <div class="card" dir="rtl">
+                    <div class="card border" dir="rtl">
                         <div class="position-relative p-1">
                             <div class="owl-carousel-img owl-theme" dir="ltr">
                                 <div class="item position-relative">
@@ -69,13 +86,14 @@
                                 <p class="mt-3 fw-light d-flex align-items-center gray-color">
                                     <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg" class="location ms-2" width="15" height="15" alt="">{{ $item->country }}
                                 </p>
-                            </div>
-                            <hr class="m-0 mb-1">
-                            <div class="publisher d-flex align-items-center justify-content-between p-4">
-
-                                <div class="info gray-color">
+                                <p class="mt-3 fw-light d-flex align-items-center gray-color font-english">
                                     {{ $item->created_at }}
-                                </div>
+                                </p>
+                            </div>
+                            <hr class="m-0 mb-1 text-dark">
+                            <div class="publisher row p-4">
+                                <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                             </div>
                         </div>
                     </div>
@@ -104,7 +122,7 @@
 
                 @foreach ($newProperties as $item)
                 <div class="item">
-                    <div class="card" dir="rtl">
+                    <div class="card border" dir="rtl">
                         <div class="position-relative p-1">
                             <div class="owl-carousel-img owl-theme" dir="ltr">
                                 <div class="item position-relative">
@@ -134,12 +152,10 @@
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                  </ul> -->
                             </div>
-                            <hr class="m-0 mb-1">
-                            <div class="publisher d-flex align-items-center justify-content-between p-4">
-
-                                <div class="info gray-color">
-                                    {{ $item->created_at }}
-                                </div>
+                            <hr class="m-0 mb-1 text-dark">
+                            <div class="publisher row p-4">
+                                <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                             </div>
                         </div>
                     </div>
@@ -197,7 +213,7 @@
 
                         @foreach ($newCommercial as $item)
                         <div class="item">
-                            <div class="card" dir="rtl">
+                            <div class="card border" dir="rtl">
                                 <div class="position-relative p-1">
                                     <div class="owl-carousel-img owl-theme" dir="ltr">
                                         <div class="item position-relative">
@@ -227,12 +243,10 @@
                                                  <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                              </ul> -->
                                     </div>
-                                    <hr class="m-0 mb-1">
-                                    <div class="publisher d-flex align-items-center justify-content-between p-4">
-
-                                        <div class="info gray-color">
-                                            {{ $item->created_at }}
-                                        </div>
+                                    <hr class="m-0 mb-1 text-dark">
+                                    <div class="publisher row p-4">
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +276,7 @@
 
                         @foreach ($newforsale as $item)
                         <div class="item">
-                            <div class="card" dir="rtl">
+                            <div class="card border" dir="rtl">
                                 <div class="position-relative p-1">
                                     <div class="owl-carousel-img owl-theme" dir="ltr">
                                         <div class="item position-relative">
@@ -292,12 +306,10 @@
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                  </ul> -->
                                     </div>
-                                    <hr class="m-0 mb-1">
-                                    <div class="publisher d-flex align-items-center justify-content-between p-4">
-
-                                        <div class="info gray-color">
-                                            {{ $item->property->created_at }}
-                                        </div>
+                                    <hr class="m-0 mb-1 text-dark">
+                                    <div class="publisher row p-4">
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +339,7 @@
 
                         @foreach ($newForRent as $item)
                         <div class="item">
-                            <div class="card" dir="rtl">
+                            <div class="card border" dir="rtl">
                                 <div class="position-relative p-1">
                                     <div class="owl-carousel-img owl-theme" dir="ltr">
                                         <div class="item position-relative">
@@ -357,15 +369,10 @@
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                  </ul> -->
                                     </div>
-                                    <hr class="m-0 mb-1">
-                                    <div class="publisher d-flex align-items-center justify-content-between p-4">
-
-                                        <div class="info gray-color">
-                                            {{ $item->Rental_term }}
-                                        </div>
-                                        <div class="info gray-color">
-                                            {{ $item->property->created_at }}
-                                        </div>
+                                    <hr class="m-0 mb-1 text-dark">
+                                    <div class="publisher row p-4">
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -434,7 +441,7 @@
 
                         @foreach ($propertiesRec as $item)
                         <div class="item">
-                            <div class="card" dir="rtl">
+                            <div class="card border" dir="rtl">
                                 <div class="position-relative p-1">
                                     <div class="owl-carousel-img owl-theme" dir="ltr">
                                         <div class="item position-relative">
@@ -464,12 +471,11 @@
                                      <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
                                  </ul> -->
                                     </div>
-                                    <hr class="m-0 mb-1">
-                                    <div class="publisher d-flex align-items-center justify-content-between p-4">
-
-                                        <div class="info gray-color">
-                                            {{ $item->created_at }}
-                                        </div>
+                                    <hr class="m-0 mb-1 text-dark">
+                                    <div class="publisher row p-4">
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>

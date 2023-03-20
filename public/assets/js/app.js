@@ -37,8 +37,21 @@ var sticky = navbar.offsetTop;
 function myFunction() {
   if (window.pageYOffset >= sticky + 200 ) {
     $(navbar).removeClass("py-3").addClass("py-2")
+    $("navbar").removeClass("py-3").addClass("py-2")
   } else {
     $(navbar).removeClass("py-2").addClass("py-3")
   }
 }
 
+
+function ScrollFunction(x) {
+  if (x.matches) { // If media query matches
+    $(".enquires-box").addClass("fixed-bottom text-center shadow-lg")
+    } else {
+      $(".enquires-box").removeClass("fixed-bottom text-center shadow-lg")
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+ScrollFunction(x) // Call listener function at run time
+x.addListener(ScrollFunction) // Attach listener function on state changes

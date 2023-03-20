@@ -43,8 +43,7 @@
                                 <div class="">
                                     <label for="rent type">عنوان {{ $PurposeOfPurchase }} </label>
                                     <select class="form-control ms-2 rounded-0 w-100"  id="address" name="country">
-                                        <option selected>اختر عنوان {{ $PurposeOfPurchase }}</option>
-                                        <option value="التجمع الخامس">التجمع الخامس</option>
+                                        <option value="التجمع الخامس" selected>التجمع الخامس</option>
                                         <option value="التجمع الأول">التجمع الأول</option>
                                         <option value="المعادي">المعادي</option>
                                         <option value="الشيخ زايد">الشيخ زايد</option>
@@ -57,13 +56,13 @@
                                             placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="name">
                                             <input class="form-control mt-3" autocomplete="off"
                                             placeholder="مساحة " hidden value="{{ $space }}" type="text" name="space">
-                            <input type="submit" value="التالي"
-                                class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
-
+                                <div class="d-flex justify-content-between">
+                                    <input type="submit" value="التالي" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center text-center justify-content-center">
+                                    <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info rounded-0 px-5 py-3 my-4 text-center">السابق</a>
+                                </div>
                             </div>
                 </div>
         </form>
-        <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info">Back</a>
 
         @include('layouts.fotterone')
 

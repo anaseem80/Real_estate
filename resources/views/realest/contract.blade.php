@@ -76,12 +76,14 @@
             <input class="form-control" autocomplete="off" placeholder="مساحة {{ $PurposeOfPurchase }}" hidden value="{{ $PurposeOfPurchase }}" type="text" name="name">
             <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $space }}" type="text" name="space">
             <input class="form-control" autocomplete="off" placeholder="مساحة " hidden value="{{ $country }}" type="text" name="country">
-            <input type="submit" value="إرسال" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center w-100 text-center justify-content-center">
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="إرسال" class="btn btn-success rounded-0 px-5 py-3 my-4 d-flex align-items-center text-center justify-content-center">
+                <a href="{{ url('advisors?control=PurposeOfPurchase') }}" class="btn btn-info rounded-0 px-5 py-3 my-4 text-center">السابق</a>
+            </div>
         </div>
         </div>
         </div>
     </form>
-    <a href="{{ route('advisors.addressProp') }}" class="btn btn-info">Back</a>
 
     @include('layouts.fotterone')
 

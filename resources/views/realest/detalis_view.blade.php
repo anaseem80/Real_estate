@@ -88,7 +88,13 @@
             -webkit-columns: 3;
             -moz-columns: 3;
         }
-
+        @media(max-width:767px){
+            .property-features {
+                columns: 1;
+                -webkit-columns: 1;
+                -moz-columns: 1;
+            }
+        }
     </style>
     <title>{{$property->name}}</title>
     <link rel="icon" href="/logoapp (1).png">
@@ -174,12 +180,12 @@
             <div class="row real-estate-details">
                 <div class="col-lg-8">
                     <div class="text-end mt-4 d-flex align-items-center justify-content-between">
-                        <h1 class="blue-color"><span class="english-font text-dark">AED / </span>{{$property->property_details->price}}$</h1>
+                        <h1 class="blue-color"><span class="english-font text-dark">AED / </span>{{$property->pay}}$</h1>
                         <p class="english-font text-dark m-0 p-1">{{$property->views}} <i class="fa fa-eye"></i></p>
                     </div>
                     <ul class="property-main-features list-unstyled p-0 mt-4">
                         <li class="p-3 bg-light">اسم العقار <span class="english-font text-dark text-dark d-block"> : {{$property->name}}</span></li>
-                        <li class="p-3 bg-light">عنوان العقار <span class="english-font text-dark text-dark d-block"> : {{$property->country}}</span></li>
+                        <li class="p-3 bg-light">عنوان العقار <span class="english-font text-dark text-dark d-block"> : {{$property->property_details->address}}</span></li>
                         <li class="p-3 bg-light">مكان العقار <span class="english-font text-dark text-dark d-block"> : {{$property->country}}</span></li>
                         <li class="p-3 bg-light">اسم المعلن<span class="english-font text-dark text-dark d-block"> : {{$property->user->name}}</span></li>
                         <li class="p-3 bg-light">رقم العقار <span class="english-font text-dark text-dark d-block"> : {{$property->property_details->id}}</span></li>
@@ -220,14 +226,17 @@
                         </div> -->
                 </div>
                 <div class="col-lg-4">
-                    <div class="box p-4 mt-4 bg-light">
+                    <div class="box p-4 mt-4 bg-light enquires-box">
                         <h5 class="mb-4">أستعلم الان عن هذا الإعلان</h5>
                         <?php
                             $currenturl = url()->full();
 
                             ?>
-
-                        <a href="https://wa.me/+201158232428?text=I would like more information on {{$property->name}} {{$currenturl}}" id="whatsapp_link" target="_blank" class="btn btn-success w-100 p-2 text-light"><i class="fa fa-whatsapp ms-2"></i> الأستعلام عن العقار</a>
+                        <div class="publisher d-flex" style="gap:15px">
+                            <a href="https://wa.me/+201158232428?text=I would like more information on {{$property->name}} {{$currenturl}}" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a>
+                            <a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a>
+                        </div>
+                        <!-- <a href="https://wa.me/+201158232428?text=I would like more information on {{$property->name}} {{$currenturl}}" id="whatsapp_link" target="_blank" class="btn btn-success w-100 p-2 text-light"><i class="fa fa-whatsapp ms-2"></i> الأستعلام عن العقار</a> -->
                         <!-- <form action="{{ route("addenqueris") }}"method="post" enctype="multipart/form-data">
                                 {{ method_field('post') }}
                                 {{ csrf_field() }}
