@@ -432,6 +432,7 @@
                             <span class="heading-divider"></span>
                             <p class="mb-5 fs-5">تصفح العقارات الموصى بها.</p>
                         </div>
+
                     </div>
                     <div class="owl-carousel py-5 owl-theme">
 
@@ -484,6 +485,94 @@
             </div>
 
 
+
+
+
+
+
+
+
+
+            <div class="3kares-most-visited ">
+                <div class="container">
+                    <div class="title d-flex flex-wrap justify-content-between align-items-center">
+                        <div>
+                            <h1 class="mt-5 mb-4">اكثر المدن التي تحتوي علي عقارات</h1>
+                            <span class="heading-divider"></span>
+                            <p class="mb-5 fs-5">تصفح اشهر المدن التي تحتوي علي عقارات</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        {{-- @foreach ($mostCountries as $item) --}}
+
+                        <div class="col-lg-8 my-2">
+                            <div class="properti_city position-relative">
+                                <a href="moreproperty/{{ $mostCountries[0]->country }}">
+                                    <div class="thumb"><img class="img-fluid w-100" src="assets/img/backgrounds/pc2.jpg" alt="pc1.jpg"></div>
+                                    <div class="overlay">
+                                        <div class="details text-light">
+                                            <h4>{{ $mostCountries[0]->country }}</h4>
+                                            <p class="text-light"><span class="english-font">{{ $mostCountries[0]->count }}</span>
+                                                عقار
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 my-2">
+                            <div class="properti_city position-relative">
+                                <a href="moreproperty/{{ $mostCountries[1]->country }}">
+                                    <div class="thumb"><img class="img-fluid w-100" src="assets/img/backgrounds/pc1.jpg" alt="pc1.jpg"></div>
+                                    <div class="overlay">
+                                        <div class="details text-light">
+                                            <h4>{{ $mostCountries[1]->country }}</h4>
+                                            <p class="text-light"><span class="english-font text-light">{{ $mostCountries[1]->count }}</span>
+                                                عقار
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 my-2">
+                            <div class="properti_city position-relative">
+                                <a href="moreproperty/{{ $mostCountries[2]->country }}">
+                                    <div class="thumb"><img class="img-fluid w-100" src="assets/img/backgrounds/pc3.jpg" alt="pc1.jpg"></div>
+                                    <div class="overlay">
+                                        <div class="details text-light">
+                                            <h4>{{ $mostCountries[2]->country }}</h4>
+                                            <p class="text-light"><span class="english-font text-light">{{ $mostCountries[2]->count }}</span>
+                                                عقار
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 my-2">
+                            <div class="properti_city position-relative">
+                                <a href="moreproperty/{{ $mostCountries[3]->country }}">
+                                    <div class="thumb"><img class="img-fluid w-100" src="assets/img/backgrounds/1.jpg" alt="pc1.jpg"></div>
+                                    <div class="overlay">
+                                        <div class="details text-light">
+                                            <h4>{{ $mostCountries[3]->country }}</h4>
+                                            <p class="text-light"><span class="english-font text-light">{{ $mostCountries[3]->count }}</span>
+                                                عقار
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     @include('layouts.fotterone')
