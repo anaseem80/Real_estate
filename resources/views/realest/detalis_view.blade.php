@@ -180,7 +180,7 @@
             <div class="row real-estate-details">
                 <div class="col-lg-8">
                     <div class="text-end mt-4 d-flex align-items-center justify-content-between">
-                        <h1 class="blue-color"><span class="english-font text-dark">AED / </span>{{$property->pay}}$</h1>
+                        <h1 class="blue-color"><span class="english-font text-dark">EGP </span>{{$property->pay}}</h1>
                         <p class="english-font text-dark m-0 p-1">{{$property->views}} <i class="fa fa-eye"></i></p>
                     </div>
                     <ul class="property-main-features list-unstyled p-0 mt-4">
@@ -204,9 +204,11 @@
                     <div class="real-estate-description">
                         <h3 class="mt-5 text-dark">التفاصيل</h3>
                         <ul class="property-features margin-top-0 list-unstyled p-0 mt-4">
-                            <li class="p-3 bg-light">رقم العقار: <span class="english-font text-dark text-dark">4</span></li>
-                            <li class="p-3 bg-light"> عدد الحمامات: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_toilet}}</span></li>
-                            <li class="p-3 bg-light"> عدد الغرف: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_room}}</span></li>
+                            <li class="p-3 bg-light"><span>رقم العقار:</span> <span class="english-font text-dark text-dark">{{$property->property_details->id}}</span></li>
+                            @if($property->catogery->name !== "محل")
+                                <li class="p-3 bg-light"> عدد الحمامات: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_toilet}}</span></li>
+                                <li class="p-3 bg-light"> عدد الغرف: <span class="english-font text-dark text-dark">{{$property->property_details->numbeer_room}}</span></li>
+                            @endif
                             <li class="p-3 bg-light">نوع المبني: <span>{{$property->catogery->name}}</span></li>
                             <li class="p-3 bg-light">الإتجاة: <span>{{$property->property_details->property_direction}}</span></li>
                         </ul>

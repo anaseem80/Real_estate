@@ -117,7 +117,7 @@
                             @endforeach
                         @else
                         <div class="text-center">
-                            <img src="{{ asset('assets/img/walking-man.gif') }}" />
+                            <img src="{{ asset('assets/img/walking-man.gif') }}" class="img-fluid">
                             <h4 class="text-dark my-3">لا يوجد بيانات مطابقة للبيانات التي أدخلتها
                                 تواصل مع فريق الدعم
                             </h4>

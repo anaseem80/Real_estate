@@ -21,6 +21,11 @@
     <link href="{{ URL::asset('assets/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .file-icon p{
+            display: none;
+        }
+    </style>
     <title>اضافة عقار</title>
 </head>
 
@@ -172,7 +177,7 @@
 
                     <div class="form-group mb-3">
                         <label for="rent type">السعر الكلي</label>
-                        <input type="text" name="pay" class="form-control ms-2 rounded-0 " placeholder="البادجت/المزانية">
+                        <input type="number" name="pay" class="form-control ms-2 rounded-0 " placeholder="البادجت/المزانية">
                         <div class="mb-4">
                             <p class="mg-b-10">مميزات العقار</p>
                             <select name="future[]" multiple="multiple" class="form-control select2">
@@ -229,7 +234,6 @@
     <script src="{{ asset('assets/js/libraries/a1a75d5546.js') }}"></script>
     <script src="{{ asset('assets/s/libraries/swiper-bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!--Internal Fileuploads js-->
     <script src="{{ URL::asset('assets/plugins/fileuploads/js/fileupload.js') }}"></script>
     <script src="{{ URL::asset('assets/plugins/fileuploads/js/file-upload.js') }}"></script>
     <!--Internal Fancy uploader js-->
