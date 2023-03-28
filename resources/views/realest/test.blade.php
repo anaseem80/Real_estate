@@ -90,8 +90,8 @@
                             </div>
                             <hr class="m-0 mb-1 text-dark">
                             <div class="publisher row p-4">
-                                <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                             </div>
                         </div>
                     </div>
@@ -150,16 +150,14 @@
                             </div>
                             <hr class="m-0 mb-1 text-dark">
                             <div class="publisher row p-4">
-                                <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
-            @foreach ($catogerys as $item)
-            @if($item->count > 0)
             <div class="3kares-most-visited A3kar-type ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -173,8 +171,8 @@
                     <div class="row">
 
 
-                        
-                        
+                        @foreach ($catogerys as $item)
+                        @if($item->count > 0)
                         <div class="col-lg-3 my-2">
                             <div class="properti_city position-relative">
                                 <a href="morepropertyCato/{{ $item->id }}">
@@ -187,8 +185,8 @@
                                 </a>
                             </div>
                         </div>
-                        
-                        
+                        @endif
+                        @endforeach
 
 
 
@@ -197,8 +195,6 @@
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
             <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -245,8 +241,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -262,8 +258,6 @@
                     </div>
                 </div>
             </div>
-            @foreach ($newforsale as $item)
-            @if($item->count > 0)
             <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -310,8 +304,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -327,10 +321,6 @@
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
-            @foreach ($newForRent as $item)
-            @if($item->count() > 0)
             <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -377,8 +367,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -394,8 +384,6 @@
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
             {{-- <div class="">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -430,9 +418,8 @@
                     </div>
                 </div>
             </div> --}}
-            @foreach ($propertiesRec as $item)
-            @if($item->count > 0)
-            <div class="3kares-most-visited">
+
+            <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -478,8 +465,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -495,8 +482,7 @@
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
+
 
 
 
