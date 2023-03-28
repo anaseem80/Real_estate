@@ -68,9 +68,7 @@
                             <div class="owl-carousel-img owl-theme" dir="ltr">
                                 <div class="item position-relative">
                                     <img src="{{ $item->picture }}" class="card-img-top" height="270" alt="...">
-                                    <p class="status position-absolute text-light bg-danger text-white px-3 py-1 rounded fw-bold">
-                                        <span class="english-font">اعلي تقييم
-                                    </p>
+                                    
                                 </div>
                             </div>
 
@@ -127,9 +125,7 @@
                             <div class="owl-carousel-img owl-theme" dir="ltr">
                                 <div class="item position-relative">
                                     <img src="{{ $item->picture }}" class="card-img-top" height="270" alt="...">
-                                    <p class="status position-absolute text-light bg-danger text-white px-3 py-1 rounded fw-bold">
-                                        <span class="english-font">اعلي تقييم
-                                    </p>
+                                    
                                 </div>
                             </div>
 
@@ -162,6 +158,8 @@
                 </div>
                 @endforeach
             </div>
+            @foreach ($catogerys as $item)
+            @if($item->count > 0)
             <div class="3kares-most-visited A3kar-type ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -175,8 +173,8 @@
                     <div class="row">
 
 
-                        @foreach ($catogerys as $item)
-                        @if($item->count > 0)
+                        
+                        
                         <div class="col-lg-3 my-2">
                             <div class="properti_city position-relative">
                                 <a href="morepropertyCato/{{ $item->id }}">
@@ -189,8 +187,8 @@
                                 </a>
                             </div>
                         </div>
-                        @endif
-                        @endforeach
+                        
+                        
 
 
 
@@ -199,6 +197,8 @@
                     </div>
                 </div>
             </div>
+            @endif
+            @endforeach
             <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -262,6 +262,8 @@
                     </div>
                 </div>
             </div>
+            @foreach ($newforsale as $item)
+            @if($item->count > 0)
             <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -325,6 +327,10 @@
                     </div>
                 </div>
             </div>
+            @endif
+            @endforeach
+            @foreach ($newForRent as $item)
+            @if($item->count() > 0)
             <div class="3kares-most-visited ">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
@@ -388,7 +394,9 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            @endif
+            @endforeach
+            {{-- <div class="">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -421,10 +429,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="3kares-most-visited ">
+            </div> --}}
+            @foreach ($propertiesRec as $item)
+            @if($item->count > 0)
+            <div class="3kares-most-visited">
                 <div class="container">
                     <div class="title d-flex flex-wrap justify-content-between align-items-center">
                         <div>
@@ -435,9 +443,6 @@
 
                     </div>
                     <div class="owl-carousel py-5 owl-theme">
-
-
-
 
                         @foreach ($propertiesRec as $item)
                         <div class="item">
@@ -457,7 +462,7 @@
                                 <div class="card-body mt-2 p-0">
                                     <div class="px-4">
                                         <p class="text-danger fw-bold">حصري</p>
-                                        <a href="detelisscreen/{{ $item->id }}" class="text-decoration-none">
+                                        <a href="{{ route('detelisscreen',$item) }}" class="text-decoration-none">
                                             <h5 class="card-title mt-3 fw-bold gray-color">
                                                 {{ $item->name }}
                                             </h5>
@@ -465,12 +470,16 @@
                                         <p class="mt-3 fw-light d-flex align-items-center gray-color">
                                             <img src="assets/img/backgrounds/location-sign-svgrepo-com.svg" class="location ms-2" width="15" height="15" alt="">{{ $item->country }}
                                         </p>
+                                        <!-- <ul class="p-0 d-flex justify-content-between">
+                                     <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
+                                     <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
+                                     <li class="list-inline-item m-0">رقم العقار: <span class="english-text">4</span></li>
+                                 </ul> -->
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
                                         <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
                                         <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -480,10 +489,14 @@
 
 
 
+
+
+
                     </div>
                 </div>
             </div>
-
+            @endif
+            @endforeach
 
 
 
