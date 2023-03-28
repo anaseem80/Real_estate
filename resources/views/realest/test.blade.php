@@ -90,8 +90,8 @@
                             </div>
                             <hr class="m-0 mb-1 text-dark">
                             <div class="publisher row p-4">
-                                <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                             </div>
                         </div>
                     </div>
@@ -150,8 +150,8 @@
                             </div>
                             <hr class="m-0 mb-1 text-dark">
                             <div class="publisher row p-4">
-                                <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                             </div>
                         </div>
                     </div>
@@ -245,8 +245,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -310,8 +310,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -377,8 +377,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -478,8 +478,8 @@
                                     </div>
                                     <hr class="m-0 mb-1 text-dark">
                                     <div class="publisher row p-4">
-                                        <div class="col-lg-6"><a href="http://wa.me/+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
-                                        <div class="col-lg-6"><a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
+                                        <div class="col-lg-6"><a href="http://wa.me/+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a></div>
+                                        <div class="col-lg-6"><a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a></div>
                                     </div>
                                 </div>
                             </div>

@@ -235,10 +235,10 @@
 
                             ?>
                         <div class="publisher d-flex" style="gap:15px">
-                            <a href="https://wa.me/+201158232428?text=I would like more information on {{$property->name}} {{$currenturl}}" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a>
-                            <a href="tel:+201158232428" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a>
+                            <a href="https://wa.me/+201222247729?text=I would like more information on {{$property->name}} {{$currenturl}}" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-whatsapp text-dark fs-5"></i> واتساب</a>
+                            <a href="tel:+201222247729" class="btn btn border-dark border-2 rounded-pill w-100"><i class="fa fa-phone text-dark fs-5"></i> هاتف</a>
                         </div>
-                        <!-- <a href="https://wa.me/+201158232428?text=I would like more information on {{$property->name}} {{$currenturl}}" id="whatsapp_link" target="_blank" class="btn btn-success w-100 p-2 text-light"><i class="fa fa-whatsapp ms-2"></i> الأستعلام عن العقار</a> -->
+                        <!-- <a href="https://wa.me/+201222247729?text=I would like more information on {{$property->name}} {{$currenturl}}" id="whatsapp_link" target="_blank" class="btn btn-success w-100 p-2 text-light"><i class="fa fa-whatsapp ms-2"></i> الأستعلام عن العقار</a> -->
                         <!-- <form action="{{ route("addenqueris") }}"method="post" enctype="multipart/form-data">
                                 {{ method_field('post') }}
                                 {{ csrf_field() }}
